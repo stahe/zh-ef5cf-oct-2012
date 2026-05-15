@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stahe.github.io/zh-ef5cf-oct-2012/sitemap.xml

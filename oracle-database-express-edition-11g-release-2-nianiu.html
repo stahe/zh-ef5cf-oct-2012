@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://stahe.github.io/zh-ef5cf-oct-2012/oracle-database-express-edition-11g-release-2-nianiu.html">
       
       
-        <link rel="prev" href="mysql-5528-nianiu.html">
+        <link rel="prev" href="iu-mysql-5528-enianiu.html">
       
       
         <link rel="next" href="postgresql-921-nianiu.html">
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -330,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="-ienianiu.html" class="md-nav__link">
+      <a href="-nianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.  ：一个案例研究
+    2.  案例研究
   
 
     
@@ -384,14 +386,14 @@
   
   
     <li class="md-nav__item">
-      <a href="mysql-5528-nianiu.html" class="md-nav__link">
+      <a href="iu-mysql-5528-enianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. MySQL 5.5.28 案例研究
+    4. 基于 MySQL 5.5.28 的案例研究
   
 
     
@@ -474,7 +476,7 @@
   <a href="#51" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.1. 安装工具
+        5.1. 工具安装
       
     </span>
   </a>
@@ -485,7 +487,7 @@
   <a href="#52" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.2. 根据实体创建数据库
+        5.2. 基于实体创建数据库
       
     </span>
   </a>
@@ -496,7 +498,7 @@
   <a href="#53-ef-5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.3. 基于 EF 5 的多层架构
+        5.3. 基于 EF 的多层架构 5
       
     </span>
   </a>
@@ -612,117 +614,117 @@
   
 
 
-<p><a id="refheading39807804107930"></a></p>
-<h1 id="5-oracle-database-express-edition-11g-release-2">5. <span style="color: #365f91"><span style="color: #365f91">Oracle Database Express Edition 11g Release 2 案例研究</span></span></h1>
-<p><a id="refheading39809804107930"></a></p>
-<h2 id="51">5.1. <span style="color: #4f81bd">安装工具</span></h2>
+<p><span id="refheading39807804107930" name="refheading39807804107930" class="odt-bookmark-anchor"></span></p>
+<h1 id="5-oracle-database-express-edition-11g-release-2">5. <span style="color: #365f91">Oracle Database Express Edition 11g Release 2 案例研究</span></h1>
+<p><span id="refheading39809804107930" name="refheading39809804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="51">5.1. <span style="color: #4f81bd">工具安装</span></h2>
 <p><span style="color: #000000">需要安装的工具如下：</span></p>
 <ul>
-<li>数据库管理系统（DBMS）：[http://www.oracle.com/technetwork/products/express-edition/downloads/index.html]；</li>
-<li>管理工具：EMS SQL Manager for Oracle 免费版 [http://www.sqlmanager.net/fr/products/oracle/manager/download]；</li>
-<li>.NET 版 Oracle 客户端：ODAC 11.2 Release 5 (11.2.0.3.20) 及 Visual Studio 版 Oracle 开发工具：[http://www.oracle.com/technetwork/developer-tools/visual-studio/downloads/index.html]。</li>
+<li>SGBD：[http://www.oracle.com/technetwork/products/express-edition/downloads/index.html]；</li>
+<li>一个管理工具：EMS SQL Manager for Oracle Freeware [http://www.sqlmanager.net/fr/products/oracle/manager/download]；</li>
+<li>一个 Oracle 客户端：NET：ODAC 11.2 Release 5 (11.2.0.3.20) 带 Oracle Developer Tools for Visual Studio：[http://www.oracle.com/technetwork/developer-tools/visual-studio/downloads/index.html]。</li>
 </ul>
-<p><span style="color: #000000">在以下示例中，用户</span><strong><span style="color: #000000">“system”</span></strong><span style="color: #000000">的密码为</span><strong><span style="color: #000000">“system”</span></strong><span style="color: #000000">。</span></p>
-<p><span style="color: #000000">启动 Oracle [1]，然后启动 [SQL Manager Lite for Oracle] 工具，我们将使用该工具来管理 DBMS [2]。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005C3000001B1A67093DE.png" width="680" height="200" style="display:inline-block; margin:4px;width:17.999cm;height:5.285cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C3000001B1A67093DE.png" /></td></tr></table>
+<p><span style="color: #000000">在以下示例中，用户 </span><strong><span style="color: #000000">system </span></strong><span style="color: #000000">的密码为 </span><strong><span style="color: #000000">system</span></strong><span style="color: #000000">。</span></p>
+<p><span style="color: #000000">先启动 Oracle [1]，然后启动 [SQL Manager Lite for Oracle] 工具，我们将使用该工具管理 SGBD 和 [2]。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005C3000001B1A67093DE.png" width="680" height="200" style="display:inline-block; margin:4px;width:17.999cm;height:5.283cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C3000001B1A67093DE.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[3]中，我们连接到一个现有的数据库；</span></li>
+<li><span style="color: #000000">在 [3] 中，我们连接到一个现有数据库；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D20000018D9A531FD8.png" width="680" height="181" style="display:inline-block; margin:4px;width:17.999cm;height:4.796cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D20000018D9A531FD8.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005D20000018D9A531FD8.png" width="680" height="181" style="display:inline-block; margin:4px;width:17.999cm;height:4.796cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D20000018D9A531FD8.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[4]中，我们使用Oracle XE服务进行连接；</span></li>
-<li><span style="color: #000000">在[5]中，我们指定了XE数据库的名称；</span></li>
-<li><span style="color: #000000">在[6]中，我们使用system/system登录；</span></li>
-<li><span style="color: #000000">在 [7] 中，我们完成向导；</span></li>
+<li><span style="color: #000000">在 [4] 中，我们使用 Oracle 服务 XE 进行连接；</span></li>
+<li><span style="color: #000000">在 [5] 中，指定数据库名称为 XE；</span></li>
+<li><span style="color: #000000">在 [6] 中，以 system / system 身份登录；</span></li>
+<li><span style="color: #000000">在 [7] 中，结束向导；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005C60000030432C84331.png" width="680" height="355" style="display:inline-block; margin:4px;width:17.999cm;height:9.402cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C60000030432C84331.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005C60000030432C84331.png" width="680" height="355" style="display:inline-block; margin:4px;width:17.999cm;height:9.4cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C60000030432C84331.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [8] 中，我们连接到数据库；</span></li>
-<li><span style="color: #000000">在[9]中，我们已连接成功；</span></li>
-<li><span style="color: #000000">由于我们是以具有扩展权限的系统/system用户身份登录的，因此我们可以，例如，管理用户 [10]；</span></li>
+<li><span style="color: #000000">在 [8] 中，连接到数据库；</span></li>
+<li><span style="color: #000000">在 [9] 中，已成功登录；</span></li>
+<li><span style="color: #000000">由于是以拥有扩展权限的system / system用户身份登录的，因此我们可以管理用户，例如[10]；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000060D000002626FE0FAAF.png" width="680" height="268" style="display:inline-block; margin:4px;width:17.999cm;height:7.087cm;" class="odt-zoomable" data-zoom-src="images/100000000000060D000002626FE0FAAF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000060D000002626FE0FAAF.png" width="680" height="268" style="display:inline-block; margin:4px;width:17.999cm;height:7.087cm;" class="odt-zoomable" data-zoom-src="images/100000000000060D000002626FE0FAAF.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[11]中，创建一个新用户；</span></li>
-<li><span style="color: #000000">在 [12] 中，该用户将被命名为 [RDVMEDECINS-EF]；</span></li>
+<li><span style="color: #000000">在 [11] 中，创建一个新用户；</span></li>
+<li><span style="color: #000000">将其更名为 [RDVMEDECINS-EF]；</span></li>
 <li><span style="color: #000000">在 [13] 中，其密码为 </span><em>rdvmedecins</em><span style="color: #000000">；</span></li>
 <li><span style="color: #000000">在 [14] 中，确认用户创建；</span></li>
-<li><span style="color: #000000">在 [15] 中，用户已创建；</span></li>
+<li><span style="color: #000000">在 [15] 步骤中，用户已创建；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C800000299DB42B8C4.png" width="484" height="333" style="display:inline-block; margin:4px;width:12.806cm;height:8.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C800000299DB42B8C4.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003C800000299DB42B8C4.png" width="484" height="333" style="display:inline-block; margin:4px;width:12.806cm;height:8.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C800000299DB42B8C4.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [16] 中，用户 [RDVMEDECINS-EF] 同时也是一个数据库模式；</span></li>
-<li><span style="color: #000000">在 [17] 中，创建的用户权限不足。我们通过 SQL 脚本为其授予权限；</span></li>
+<li><span style="color: #000000">在 [17] 中，新创建的用户权限不足。我们通过脚本 SQL 为其授予权限；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005EE000001435CA7173A.png" width="680" height="145" style="display:inline-block; margin:4px;width:17.999cm;height:3.829cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EE000001435CA7173A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005EE000001435CA7173A.png" width="680" height="145" style="display:inline-block; margin:4px;width:17.999cm;height:3.829cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EE000001435CA7173A.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [18] 中，执行该脚本；</span></li>
-<li><span style="color: #000000">在 [19] 中，我们将尝试以 [RDVMEDECINS-EF] 身份登录，以查看其可执行的操作。为此，我们首先在 [EMS Manager] 中注册一个新数据库；</span></li>
+<li><span style="color: #000000">在 [18] 中，脚本已执行；</span></li>
+<li><span style="color: #000000">在 [19] 中，我们将尝试以 [RDVMEDECINS-EF] 的身份登录，以查看其权限范围。为此，我们首先在 [EMS Manager] 中注册一个新数据库；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000060D000001A26BF7F79B.png" width="680" height="184" style="display:inline-block; margin:4px;width:17.999cm;height:4.858cm;" class="odt-zoomable" data-zoom-src="images/100000000000060D000001A26BF7F79B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000060D000001A26BF7F79B.png" width="680" height="184" style="display:inline-block; margin:4px;width:17.999cm;height:4.856cm;" class="odt-zoomable" data-zoom-src="images/100000000000060D000001A26BF7F79B.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [19] 中，我们通过 XE 服务登录；</span></li>
-<li><span style="color: #000000">在 [20] 中，我们以 RDVMEDECINS-EF / rdvmedecins 身份登录；</span></li>
-<li><span style="color: #000000">在 [21] 中，我们分配一个反映登录用户名称的别名；</span></li>
-<li><span style="color: #000000">在 [22] 中，我们使用提供的凭据连接到 Oracle；</span></li>
+<li><span style="color: #000000">在 [19] 中，通过 XE 服务登录；</span></li>
+<li><span style="color: #000000">在 [20] 中，使用 RDVMEDECINS-EF / rdvmedecins 身份登录；</span></li>
+<li><span style="color: #000000">在 [21] 中，需提供一个反映登录用户名的别名；</span></li>
+<li><span style="color: #000000">在 [22] 中，使用给定的信息登录 Oracle；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000646000002E477777C09.png" width="680" height="313" style="display:inline-block; margin:4px;width:17.999cm;height:8.294cm;" class="odt-zoomable" data-zoom-src="images/1000000000000646000002E477777C09.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000646000002E477777C09.png" width="680" height="313" style="display:inline-block; margin:4px;width:17.999cm;height:8.292cm;" class="odt-zoomable" data-zoom-src="images/1000000000000646000002E477777C09.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003B700000193BFCA089A.png" width="476" height="202" style="display:inline-block; margin:4px;width:12.582cm;height:5.332cm;" class="odt-zoomable" data-zoom-src="images/10000000000003B700000193BFCA089A.png" /></td></tr></table>
-
-<ul>
-<li><span style="color: #000000">在[22]中，我们成功登录；</span></li>
-<li><span style="color: #000000">在 [23] 中，我们尝试在 [RDVMEDECINS-EF] 模式中创建一个表；</span></li>
-<li><span style="color: #000000">在 [24] 中，我们定义了一个表；</span></li>
-<li><span style="color: #000000">在 [25] 中，我们验证了该表的定义；</span></li>
-</ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BB00000146C860BFC4.png" width="478" height="163" style="display:inline-block; margin:4px;width:12.635cm;height:4.313cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BB00000146C860BFC4.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003B700000193BFCA089A.png" width="476" height="202" style="display:inline-block; margin:4px;width:12.582cm;height:5.332cm;" class="odt-zoomable" data-zoom-src="images/10000000000003B700000193BFCA089A.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [26] 中，该表已创建。我们将其删除；</span></li>
-<li><span style="color: #000000">在[27]中，该表已被删除。</span></li>
+<li><span style="color: #000000">在 [22] 中，已成功连接；</span></li>
+<li><span style="color: #000000">在 [23] 中，尝试在 [RDVMEDECINS-EF] 模式下创建一个表；</span></li>
+<li><span style="color: #000000">在 [24] 中，定义了一个任意表；</span></li>
+<li><span style="color: #000000">在 [25] 中，验证其定义；</span></li>
 </ul>
-<p><span style="color: #000000">现在我们已拥有具备足够权限的用户，将创建一个 VS 2012 项目，该项目将根据实体定义在 [RDVMEDECINS-EF] 架构中创建表。</span></p>
-<p><a id="refheading39811804107930"></a></p>
-<h2 id="52">5.2. <span style="color: #4f81bd">根据实体创建数据库</span></h2>
-<p><span style="color: #000000">首先，我们将 [RdvMedecins-SqlServer-01] 项目文件夹复制到 [RdvMedecins-Oracle-01] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A80000030DD6C4353D.png" width="680" height="367" style="display:inline-block; margin:4px;width:17.999cm;height:9.708cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A80000030DD6C4353D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003BB00000146C860BFC4.png" width="478" height="163" style="display:inline-block; margin:4px;width:12.635cm;height:4.313cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BB00000146C860BFC4.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [2] 中，在 VS 2012 中，我们将 [RdvMedecins-SqlServer-01] 项目从解决方案中移除；</span></li>
+<li><span style="color: #000000">在 [26] 中，该表已创建。将其删除；</span></li>
+<li><span style="color: #000000">在 [27] 中，该表已被删除。</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062200000281943D6B13.png" width="680" height="278" style="display:inline-block; margin:4px;width:17.999cm;height:7.348cm;" class="odt-zoomable" data-zoom-src="images/100000000000062200000281943D6B13.png" /></td></tr></table>
+<p><span style="color: #000000">现在我们已拥有一个具备足够权限的用户，接下来将创建项目 VS 2012，该项目将根据实体定义创建模式 [RDVMEDECINS-EF] 中的表。</span></p>
+<p><span id="refheading39811804107930" name="refheading39811804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="52">5.2. <span style="color: #4f81bd">基于实体创建数据库</span></h2>
+<p><span style="color: #000000">首先，我们将项目 [RdvMedecins-SqlServer-01] 的文件夹复制到 [RdvMedecins-Oracle-01] [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005A80000030DD6C4353D.png" width="680" height="367" style="display:inline-block; margin:4px;width:17.999cm;height:9.708cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A80000030DD6C4353D.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [3] 中，该项目已被移除；</span></li>
-<li><span style="color: #000000">在 [4] 中，我们添加另一个项目。该项目取自我们之前创建的 [RdvMedecins-Oracle-01] 文件夹；</span></li>
+<li><span style="color: #000000">在 [2] 中，在 VS 2012 中，我们将项目 [RdvMedecins-SqlServer-01] 从解决方案中删除；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000320000001166977BE7A.png" width="400" height="139" style="display:inline-block; margin:4px;width:10.583cm;height:3.678cm;" class="odt-zoomable" data-zoom-src="images/1000000000000320000001166977BE7A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000062200000281943D6B13.png" width="680" height="278" style="display:inline-block; margin:4px;width:17.999cm;height:7.348cm;" class="odt-zoomable" data-zoom-src="images/100000000000062200000281943D6B13.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">在 [3] 中，该项目已被删除；</span></li>
+<li><span style="color: #000000">在 [4] 中，我们添加了另一个项目。该项目位于我们之前创建的 [RdvMedecins-Oracle-01] 文件夹中；</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000320000001166977BE7A.png" width="400" height="139" style="display:inline-block; margin:4px;width:10.583cm;height:3.678cm;" class="odt-zoomable" data-zoom-src="images/1000000000000320000001166977BE7A.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [5] 中，加载的项目名为 [RdvMedecins-SqlServer-01]；</span></li>
-<li><span style="color: #000000">在 [6] 中，我们将它的名称更改为 [RdvMedecins-Oracle-01]</span></li>
+<li><span style="color: #000000">在 [6] 中，将其重命名为 [RdvMedecins-Oracle-01]</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000060A0000023E257F800A.png" width="680" height="253" style="display:inline-block; margin:4px;width:17.999cm;height:6.683cm;" class="odt-zoomable" data-zoom-src="images/100000000000060A0000023E257F800A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000060A0000023E257F800A.png" width="680" height="253" style="display:inline-block; margin:4px;width:17.999cm;height:6.682cm;" class="odt-zoomable" data-zoom-src="images/100000000000060A0000023E257F800A.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [7] 中，我们将另一个项目添加到解决方案中。该项目取自先前从解决方案中移除的 [RdvMedecins-SqlServer-01] 文件夹；</span></li>
-<li><span style="color: #000000">在 [8] 中，[RdvMedecins-SqlServer-01] 项目已重新添加到解决方案中。</span></li>
+<li><span style="color: #000000">在 [7] 中，向解决方案中添加了另一个项目。该项目位于我们之前从解决方案中删除的 [RdvMedecins-SqlServer-01] 项目文件夹中；</span></li>
+<li><span style="color: #000000">在 [8] 中，项目 [RdvMedecins-SqlServer-01] 已重新加入到解决方案中。</span></li>
 </ul>
-<p><span style="color: #000000">[RdvMedecins-Oracle-01] 项目与 [RdvMedecins-SqlServer-01] 项目完全相同。我们需要进行一些修改。在 [App.config] 中，我们将修改连接字符串和 [DbProviderFactory]，这些内容必须根据不同的数据库管理系统（DBMS）进行适配。</span></p>
+<p><span style="color: #000000">项目 [RdvMedecins-Oracle-01] 与项目 [RdvMedecins-SqlServer-01] 完全相同。我们需要进行一些修改。 在 [App.config] 中，我们将修改连接字符串，并需将 [DbProviderFactory] 适配至每个 SGBD。</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- connection chain on base --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- 数据库连接字符串 --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">monContexte</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">connectionString</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));User Id=RDVMEDECINS-EF;Password=rdvmedecins;</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">providerName</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- the factory provider --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- 工厂提供者 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.data</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">DbProviderFactories</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">remove</span><span style="color:#0000ff"> </span><span style="color:#ff0000">invariant</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
@@ -732,49 +734,49 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">第 3 行：用户名和密码；</span></li>
-<li><span style="color: #000000">第 6–11 行：</span><em>DbProviderFactory</em><span style="color: #000000">。第 9 行引用了一个我们没有的 DLL [Oracle.DataAccess]。我们可以使用 NuGet [1] 获取它：</span></li>
+<li><span style="color: #000000">第3行：用户名及其密码；</span></li>
+<li><span style="color: #000000">第6-11行：</span><em>DbProviderFactory</em><span style="color: #000000">。第9行引用了DLL和[Oracle.DataAccess]，但我们没有这两个文件。 可通过 NuGet [1] 获取：</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000608000001E366F52AEE.png" width="680" height="213" style="display:inline-block; margin:4px;width:17.999cm;height:5.63cm;" class="odt-zoomable" data-zoom-src="images/1000000000000608000001E366F52AEE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000608000001E366F52AEE.png" width="680" height="213" style="display:inline-block; margin:4px;width:17.999cm;height:5.63cm;" class="odt-zoomable" data-zoom-src="images/1000000000000608000001E366F52AEE.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [2] 中，在搜索框中输入关键词</span><em>“oracle”</em><span style="color: #000000">；</span></li>
-<li><span style="color: #000000">在 [3] 中，选择相应的包 [Oracle Data Provider]。这是 Oracle 的 ADO.NET 连接器；</span></li>
+<li><span style="color: #000000">在 [2] 中，于搜索框内输入关键词 </span><em>oracle</em><span style="color: #000000">；</span></li>
+<li><span style="color: #000000">在 [3] 中，选择合适的 [Oracle Data Provider] 包。这是 Oracle 的 ADO.NET 连接器；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003DB0000025DD7AC34E2.png" width="494" height="303" style="display:inline-block; margin:4px;width:13.058cm;height:8.005cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DB0000025DD7AC34E2.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003DB0000025DD7AC34E2.png" width="494" height="303" style="display:inline-block; margin:4px;width:13.058cm;height:8.005cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DB0000025DD7AC34E2.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [4] 中，引用已添加；</span></li>
-<li><span style="color: #000000">在 [5] 中，于 [App.config] 文件中，必须指定 DLL 的正确版本。您可以在其属性中找到该版本。</span></li>
+<li><span style="color: #000000">在 [4] 中，添加了该引用；</span></li>
+<li><span style="color: #000000">在 [5] 中，对于 [App.config]，需填入 DLL 的正确版本号。该版本号可在其属性中找到。</span></li>
 </ul>
-<p>在 [Entities.cs] 文件中，您必须调整将要生成的表的架构。<span style="color: #000000">所使用的架构即为拥有这些表的用户名。</span></p>
+<p>在文件 [Entites.cs] 中，需调整即将生成的表的架构。<span style="color: #000000">所使用的架构即为表所有者的用户名。</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;MEDECINS&quot;</span>, Schema = <span style="color:#a31515">&quot;RDVMEDECINS-EF&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Medecin</span><span style="color:#000000"> : </span><span style="color:#2b91af">Personne</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;CLIENTS&quot;</span>, Schema = <span style="color:#a31515">&quot;RDVMEDECINS-EF&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Client</span><span style="color:#000000"> : </span><span style="color:#2b91af">Personne</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;RVS&quot;</span>, Schema = <span style="color:#a31515">&quot;RDVMEDECINS-EF&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Rv</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;CRENEAUX&quot;</span>, Schema = <span style="color:#a31515">&quot;RDVMEDECINS-EF&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Creneau</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">我们配置项目构建：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000031C0000011508FAFA0C.png" width="398" height="138" style="display:inline-block; margin:4px;width:10.53cm;height:3.664cm;" class="odt-zoomable" data-zoom-src="images/100000000000031C0000011508FAFA0C.png" /></td></tr></table>
+<p><span style="color: #000000">我们配置项目的运行：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000031C0000011508FAFA0C.png" width="398" height="139" style="display:inline-block; margin:4px;width:10.53cm;height:3.665cm;" class="odt-zoomable" data-zoom-src="images/100000000000031C0000011508FAFA0C.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [1] 中，我们为将要生成的程序集指定了一个不同的名称；</span></li>
-<li><span style="color: #000000">在 [2] 中，我们还指定了一个不同的默认命名空间；</span></li>
-<li><span style="color: #000000">在 [3] 中，我们指定要运行的程序。</span></li>
+<li><span style="color: #000000">在 [1] 中，为即将生成的程序集指定了另一个名称；</span></li>
+<li><span style="color: #000000">在 [2] 中，同时指定另一个默认命名空间；</span></li>
+<li><span style="color: #000000">在 [3] 中，指定要执行的程序。</span></li>
 </ul>
-<p><span style="color: #000000">目前阶段没有编译错误。让我们运行 [CreateDB_01] 程序。我们得到了以下异常：</span></p>
+<p><span style="color: #000000">至此，编译未出现错误。运行程序 [CreateDB_01]。结果出现以下异常：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -795,22 +797,22 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>   à RdvMedecins_01.CreateDB_01.Main(String[] args) dans d:\data\istia-1213\c#\d
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>vp\Entity Framework\RdvMedecins\RdvMedecins-Oracle-01\CreateDB_01.cs:ligne 15
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">我们记得在 MySQL 中也遇到过同样的错误。这与实体中 </span><em><span style="color: #000000">Timestamp</span></em><span style="color: #000000"> 字段的类型有关。我们进行相同的修改。在实体中，我们将以下三行代码替换为</span></p>
+<p><span style="color: #000000">我们记得在 MySQL 中也遇到过相同的错误。这与实体中字段 </span><em><span style="color: #000000">Timestamp</span></em><span style="color: #000000"> 的类型有关。我们进行相同的修改。在实体中，我们将以下三行</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Column</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;TIMESTAMP&quot;</span><span style="color:#000000">)]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Timestamp</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">byte</span><span style="color:#000000">[] Timestamp { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000"> 如下所示：</span></p>
+<p><span style="color: #000000"> 替换为以下内容：</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">ConcurrencyCheck</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Column</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;VERSIONING&quot;</span><span style="color:#000000">)]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">int</span><span style="color:#000000">? Versioning { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">因此，我们将列类型从 </span><strong><span style="color: #000000">byte[]</span></strong><span style="color: #000000"> 更改为 </span><strong><span style="color: #000000">int</span></strong><span style="color: #000000">?。需要注意的是，无论是 SQL Server 还是 MySQL，用于管理访问并发性的表列，每次插入或修改行时都会由数据库管理系统（DBMS）赋予一个值。从现在起，我们将使用一个整型实体字段。在数据库管理系统中，我们将通过存储过程，在每次插入或修改行时将该整数递增 1。</span></p>
-<p><span style="color: #000000">我们对所有四个实体都进行了上述更改，然后重新运行应用程序。随后，我们收到以下错误：</span></p>
+<p><span style="color: #000000">因此，我们将该列的类型从 </span><strong><span style="color: #000000">byte[]</span></strong><span style="color: #000000"> 更改为 </span><strong><span style="color: #000000">int?</span></strong><span style="color: #000000">。 需要回顾的是，无论是对于 SQL Server 还是 MySQL，表中用于管理访问并发性的列，每次插入或修改行时都会接收来自 SGBD 的值。 从现在开始，我们将使用一个整型实体字段。在 SGBD 中，我们将使用存储过程，在每次插入或修改行时将该整数递增 1。</span></p>
+<p><span style="color: #000000">我们对这四个实体进行上述修改后，重新运行应用程序。随后出现以下错误：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -823,19 +825,19 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="sb">   à RdvMedecins_01.CreateDB_01.Main(String[] args) dans d:\data\istia-1213\c#\d</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="sb">vp\Entity Framework\RdvMedecins\RdvMedecins-Oracle-01\CreateDB_01.cs:ligne 15</span>
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">第 1 行表明 Oracle ADO.NET 连接器无法删除现有数据库。让我们来回顾一下发生了什么。 [CreateDB_01.cs] 中的代码如下：</span></p>
+<p><span style="color: #000000">第 1 行指出，Oracle 的连接器 ADO.NET 无法删除现有的数据库。让我们回顾一下发生了什么。[CreateDB_01.cs] 的代码如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> System.Data.Entity;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span><span style="color:#000000"> RdvMedecins.Models;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span><span style="color:#000000"> RdvMedecins_01</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">CreateDB_01</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">static</span><span style="color:#000000"> </span><span style="color:#0000ff">void</span><span style="color:#000000"> Main(</span><span style="color:#0000ff">string</span><span style="color:#000000">[] args)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// create the database</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// 创建数据库</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#2b91af">Database</span><span style="color:#000000">.SetInitializer(</span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RdvMedecinsInitializer</span><span style="color:#000000">());</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">using</span><span style="color:#000000"> (</span><span style="color:#0000ff">var</span><span style="color:#000000"> context = </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RdvMedecinsContext</span><span style="color:#000000">())</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
@@ -846,50 +848,50 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">第 15 行触发了 [RdvMedecinsInitializer] 类的执行（第 12 行）。该类定义如下：</span></p>
+<p><span style="color: #000000">第15行触发了类[RdvMedecinsInitializer]的执行（第12行）。该类内容如下：</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">RdvMedecinsInitializer</span> : <span style="color:#2b91af">DropCreateDatabaseAlways</span>&lt;<span style="color:#2b91af">RdvMedecinsContext</span>&gt;</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">它继承自 [DropCreateDatabaseAlways] 类，该类会尝试先删除数据库，然后重新创建。我们将类定义修改为：</span></p>
+<p><span style="color: #000000">它继承自类 [DropCreateDatabaseAlways]，该类试图先删除再重建数据库。我们将该类的定义修改为：</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">RdvMedecinsInitializer</span> : <span style="color:#2b91af">CreateDatabaseIfNotExists</span>&lt;<span style="color:#2b91af">RdvMedecinsContext</span>&gt;</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">只有当数据库不存在时，才会创建它。 我们重新运行 [CreateDB_01.cs] 后，不再出现错误。但在 [EMS Manager] 中，我们发现 [RDVMEDECINS-EF] 数据库仍然为空。因为 EF 5 检测到数据库已存在，因此未执行任何操作。它仅在数据库不存在时才会采取行动。由此，我们陷入了一个循环。实际上，连接数据库管理系统 (DBMS) 的连接字符串如下：</span></p>
+<p><span style="color: #000000">只有当数据库不存在时才会进行创建。重新执行 [CreateDB_01.cs] 后，此时已无错误。但在 [EMS Manager] 中，我们发现数据库 [RDVMEDECINS-EF] 仍然为空。 由于EF 5检测到数据库已存在，因此未执行任何操作。该程序仅在数据库不存在时才会执行操作。由此，我们陷入了循环。事实上，SGBD的连接字符串如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">monContexte</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">connectionString</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));User Id=RDVMEDECINS-EF;Password=rdvmedecins;</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">providerName</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">第 2 行：连接字符串使用用户名而非数据库名。该用户必须已存在。</span></p>
-<p><span style="color: #000000">因此，我们必须使用 [EMS Manager for Oracle] 工具手动创建 [RDVMEDECINS-EF] 数据库。本文不会详细描述每个步骤，仅介绍最重要的步骤。</span></p>
-<p><span style="color: #000000">Oracle 数据库将如下所示：</span></p>
+<p><span style="color: #000000">第 2 行，连接字符串使用的不是数据库名称，而是用户名。该用户必须存在。</span></p>
+<p><span style="color: #000000">因此，我们需要使用工具 [EMS Manager for Oracle] 手动创建数据库 [RDVMEDECINS-EF]。本文不详述所有步骤，仅介绍最重要的部分。</span></p>
+<p><span style="color: #000000">Oracle 数据库结构如下：</span></p>
 <p><u><strong><span style="color: #000000">表</span></strong></u></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E2000001802EBCF884.png" width="680" height="173" style="display:inline-block; margin:4px;width:17.999cm;height:4.59cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E2000001802EBCF884.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E2000001802EBCF884.png" width="680" height="173" style="display:inline-block; margin:4px;width:17.999cm;height:4.588cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E2000001802EBCF884.png" /></td></tr></table>
 
-<p><span style="color: #000000">这些表拥有与前两个示例中相同的表所具有的主键和外键。其中，外键特别设置了 ON DELETE CASCADE 属性。</span></p>
+<p><span style="color: #000000">各表的主键和外键与前两个示例中的对应表一致。外键特别包含属性 ON、DELETE 和 CASCADE。</span></p>
 <p><u><strong><span style="color: #000000">序列</span></strong></u></p>
-<p><span style="color: #000000">此处我们创建了 Oracle 序列。这些序列用于生成连续的数字。共有 5 个序列 [1]。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052D000001B3F53C6CC5.png" width="663" height="218" style="display:inline-block; margin:4px;width:17.53cm;height:5.756cm;" class="odt-zoomable" data-zoom-src="images/100000000000052D000001B3F53C6CC5.png" /></td></tr></table>
+<p><span style="color: #000000">此处创建了 Oracle 序列。它们是连续数字的生成器。共有 5 个：[1]。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000052D000001B3F53C6CC5.png" width="663" height="218" style="display:inline-block; margin:4px;width:17.53cm;height:5.756cm;" class="odt-zoomable" data-zoom-src="images/100000000000052D000001B3F53C6CC5.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[2]中，我们可以看到[SEQUENCE_CLIENTS]序列的属性。它生成以1为增量、从1开始直至一个非常大的值的连续数字。</span></li>
+<li><span style="color: #000000">在 [2] 中，我们可以看到序列 [SEQUENCE_CLIENTS] 的属性。它生成从 1 开始、以 1 为增量、直至非常大值的连续数字。</span></li>
 </ul>
-<p><span style="color: #000000">所有序列均基于相同的模型构建。 </span></p>
+<p><span style="color: #000000">所有序列都是基于相同的模式构建的。 </span></p>
 <ul>
-<li><span style="color: #000000">[SEQUENCE_CLIENTS] 将用于生成 [CLIENTS] 表的主键；</span></li>
-<li><span style="color: #000000">[SEQUENCE_DOCTORS] 将用于生成 [DOCTORS] 表的主键；</span></li>
-<li><span style="color: #000000">[SEQUENCE_SLOTS] 将用于生成 [SLOTS] 表的主键；</span></li>
-<li><span style="color: #000000">[SEQUENCE_RVS] 将用于生成 [RVS] 表的主键；</span></li>
+<li><span style="color: #000000">[SEQUENCE_CLIENTS] 将用于生成表 [CLIENTS] 的主键；</span></li>
+<li><span style="color: #000000">[SEQUENCE_MEDECINS] 将用于生成表 [MEDECINS] 的主键；</span></li>
+<li><span style="color: #000000">[SEQUENCE_CRENEAUX] 将用于生成表 [CRENEAUX] 的主键；</span></li>
+<li><span style="color: #000000">[SEQUENCE_RVS] 将用于生成表 [RVS] 的主键；</span></li>
 <li><span style="color: #000000">[SEQUENCE_VERSIONS] 将用于生成所有表中 [VERSIONING] 列的值。</span></li>
 </ul>
 <p><u><strong><span style="color: #000000">触发器</span></strong></u></p>
-<p><span style="color: #000000">触发器是在表中发生某个事件（插入、更新、删除）之前或之后由数据库管理系统（DBMS）执行的存储过程。我们共有 8 个触发器 [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000198000000B13CFBF36E.png" width="286" height="124" style="display:inline-block; margin:4px;width:7.56cm;height:3.281cm;" class="odt-zoomable" data-zoom-src="images/1000000000000198000000B13CFBF36E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">触发器是由 SGBD 在表中发生某项事件（插入、修改、删除）之前或之后执行的存储过程。我们共有 8 个 [1]：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000198000000B13CFBF36E.png" width="286" height="124" style="display:inline-block; margin:4px;width:7.56cm;height:3.281cm;" class="odt-zoomable" data-zoom-src="images/1000000000000198000000B13CFBF36E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">让我们来看一下 [TRIGGER_PK_CLIENTS] 触发器的 DDL 代码，该触发器用于填充 [CLIENTS] 表的主键：</span></p>
+<p><span style="color: #000000">让我们查看触发器 [TRIGGER_PK_CLIENTS] 的代码，该触发器为表 [CLIENTS] 提供主键：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -907,11 +909,11 @@
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="o">/</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">第 1-5 行：在 [CLIENTS] 表的每次 INSERT 操作之前；</span></li>
-<li><span style="color: #000000">第 6 行：[ID] 列将从 [SEQUENCE_CLIENTS] 序列中获取下一个值。因此，主键将由该序列提供连续的值。</span></li>
+<li><span style="color: #000000">第 1-5 行：在表 [CLIENTS] 上执行每次操作 INSERT 之前；</span></li>
+<li><span style="color: #000000">第 6 行：[ID] 列将采用 [SEQUENCE_CLIENTS] 序列的下一个值。因此，主键将获得由该序列提供的连续值。</span></li>
 </ul>
-<p><span style="color: #000000">触发器 [TRIGGER_PK_MEDECINS、TRIGGER_PK_CRENEAUX、TRIGGER_PK_RVS] 的工作原理与此类似。</span></p>
-<p><span style="color: #000000">让我们来看一下触发器 [TRIGGER_VERSIONS_CLIENTS] 的 DDL 代码，该触发器用于填充 [CLIENTS] 表的 [VERSIONING] 列：</span></p>
+<p><span style="color: #000000">触发器 [TRIGGER_PK_MEDECINS, TRIGGER_PK_CRENEAUX, TRIGGER_PK_RVS] 的原理与此类似。</span></p>
+<p><span style="color: #000000">让我们看看触发器 [TRIGGER_VERSIONS_CLIENTS] 的代码 DDL，该触发器为表 [CLIENTS] 的列 [VERSIONING] 提供数据：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -933,12 +935,12 @@
 <a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="o">/</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">第 1-2 行：在 [CLIENTS] 表上的每次 INSERT 或 UPDATE 操作之前；</span></li>
-<li><span style="color: #000000">第 8 行：[VERSIONING] 列将从 [SEQUENCE_VERSIONS] 序列中获取下一个值。因此，[VERSIONING] 列将拥有由该序列提供的连续值。</span></li>
+<li><span style="color: #000000">第 1-2 行：在表 [CLIENTS] 上执行每次 INSERT 或 UPDATE 操作之前；</span></li>
+<li><span style="color: #000000">第 8 行：[VERSIONING] 列将取 [SEQUENCE_VERSIONS] 序列的下一个值。因此，[VERSIONING] 列将获得该序列提供的连续值。</span></li>
 </ul>
-<p><span style="color: #000000">触发器 [TRIGGER_VERSION_MEDECINS、TRIGGER_VERSION_CRENEAUX、TRIGGER_VERSION_RVS] 的工作原理类似。这四个 [VERSIONING] 列的值均来自同一序列。</span></p>
-<p><span style="color: #000000">用于生成 Oracle 数据库表 [RDVMEDECINS-EF] 的脚本已放置在 [RdvMedecins / databases / oracle] 文件夹中。读者可以加载并运行该脚本以创建这些表。</span></p>
-<p><span style="color: #000000">完成此操作后，即可运行项目中的各项程序。这些程序生成的结果与 SQL Server 环境下的结果相同，但 [ModifyDetachedEntities] 程序除外——该程序会因与 MySQL 环境相同的理由而崩溃。解决此问题的方法与 MySQL 环境相同。 只需将 [RdvMedecins-MySQL-01] 项目中的 [ModifyDetachedEntities] 程序复制到 [RdvMedecins-Oracle-01] 项目中即可。但这又引发了一个新问题：</span></p>
+<p><span style="color: #000000">触发器 [TRIGGER_VERSION_MEDECINS, TRIGGER_VERSION_CRENEAUX, TRIGGER_VERSION_RVS] 的工作原理与此类似。四个列 [VERSIONING] 的值均来自同一序列。</span></p>
+<p><span style="color: #000000">用于生成 Oracle 数据库表的脚本 [RDVMEDECINS-EF] 已放置在文件夹 [RdvMedecins / databases / oracle] 中。读者可加载并执行该脚本以创建表。</span></p>
+<p><span style="color: #000000">完成上述操作后，即可运行项目中的各个程序。它们产生的结果与使用 SQL Server 时相同，唯独程序 [ModifyDetachedEntities] 会因与 MySQL 相同的原因而崩溃。 解决方法相同。只需将项目 [RdvMedecins-MySQL-01] 中的程序 [ModifyDetachedEntities] 复制到项目 [RdvMedecins-Oracle-01] 中即可。随后会出现一个新问题：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -952,88 +954,88 @@
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="mi">2</span><span class="c1">-----------------------------</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">Client</span><span class="w"> </span><span class="p">[</span><span class="mi">206</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">617</span><span class="p">]</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">Exception</span><span class="w"> </span><span class="n">non</span><span class="w"> </span><span class="n">gérée</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">System</span><span class="p">.</span><span class="k">Data</span><span class="p">.</span><span class="n">Entity</span><span class="p">.</span><span class="n">Infrastructure</span><span class="p">.</span><span class="n">DbUpdateConcurrencyException</span><span class="p">:</span><span class="w"> </span><span class="n">Une</span><span class="w"> </span><span class="n">instruction</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">mise</span><span class="w"> </span><span class="err">à</span><span class="w"> </span><span class="n">jour</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;insertion ou de suppression dans le magasin a affecté un nombre inattendu de lignes (0). Des entités ont peut-être été modifiées ou supprimées depuis leur chargement. Actualisez les entrées ObjectStateManager. ---&gt; System.Data.OptimisticConcurrencyException: Une instruction de mise à jour, d&#39;</span><span class="n">insertion</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">suppression</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">magasin</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">affecté</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="n">inattendu</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">lignes</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="w"> </span><span class="n">Des</span><span class="w"> </span><span class="n">entités</span><span class="w"> </span><span class="n">ont</span><span class="w"> </span><span class="n">peut</span><span class="o">-</span><span class="err">ê</span><span class="n">tre</span><span class="w"> </span><span class="err">é</span><span class="n">té</span><span class="w"> </span><span class="n">modifiées</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">supprimées</span><span class="w"> </span><span class="n">depuis</span><span class="w"> </span><span class="n">leur</span><span class="w"> </span><span class="n">chargement</span><span class="p">.</span><span class="w"> </span><span class="n">Actualisez</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">entrées</span><span class="w"> </span><span class="n">ObjectStateManager</span><span class="p">.</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">Exception</span><span class="w"> </span><span class="n">non</span><span class="w"> </span><span class="n">gérée</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">System</span><span class="p">.</span><span class="k">Data</span><span class="p">.</span><span class="n">Entity</span><span class="p">.</span><span class="n">Infrastructure</span><span class="p">.</span><span class="n">DbUpdateConcurrencyException</span><span class="p">:</span><span class="w"> </span><span class="n">Une</span><span class="w"> </span><span class="n">instruction</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">mise</span><span class="w"> </span><span class="err">à</span><span class="w"> </span><span class="n">jour</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="err">&#39;</span><span class="n">insertion</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">suppression</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">magasin</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">affecté</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="n">inattendu</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">lignes</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="w"> </span><span class="n">Des</span><span class="w"> </span><span class="n">entités</span><span class="w"> </span><span class="n">ont</span><span class="w"> </span><span class="n">peut</span><span class="o">-</span><span class="err">ê</span><span class="n">tre</span><span class="w"> </span><span class="err">é</span><span class="n">té</span><span class="w"> </span><span class="n">modifiées</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">supprimées</span><span class="w"> </span><span class="n">depuis</span><span class="w"> </span><span class="n">leur</span><span class="w"> </span><span class="n">chargement</span><span class="p">.</span><span class="w"> </span><span class="n">Actualisez</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">entrées</span><span class="w"> </span><span class="n">ObjectStateManager</span><span class="p">.</span><span class="w"> </span><span class="c1">---&gt; System.Data.OptimisticConcurrencyException: 存储库中的更新、插入或删除语句影响的行数超出预期（0）。实体可能在加载后已被修改或删除。请刷新条目 ObjectStateManager。</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">   </span><span class="p">...</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">   </span><span class="err">à</span><span class="w"> </span><span class="n">RdvMedecins_01</span><span class="p">.</span><span class="n">ModifyDetachedEntities</span><span class="p">.</span><span class="n">Main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">d</span><span class="p">:</span><span class="err">\</span><span class="k">data</span><span class="err">\</span><span class="n">istia</span><span class="o">-</span><span class="mi">1213</span><span class="err">\</span><span class="k">c</span><span class="o">#</span><span class="err">\</span><span class="n">dvp</span><span class="err">\</span><span class="n">Entity</span><span class="w"> </span><span class="n">Framework</span><span class="err">\</span><span class="n">RdvMedecins</span><span class="err">\</span><span class="n">RdvMedecins</span><span class="o">-</span><span class="n">Oracle</span><span class="o">-</span><span class="mi">01</span><span class="err">\</span><span class="n">ModifyDetachedE</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">ntities</span><span class="p">.</span><span class="n">cs</span><span class="p">:</span><span class="n">ligne</span><span class="w"> </span><span class="mi">56</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">第 1–4 行：已成功更新脱离的客户端；</span></li>
-<li><span style="color: #000000">第 6 行：已知的异常。这是在尝试修改实体但未持有正确版本时出现的异常。然而，在此情况下，我们并非要修改实体，而是要删除该实体：</span></li>
+<li><span style="color: #000000">第1-4行：脱机客户端已成功更新；</span></li>
+<li><span style="color: #000000">第 6 行：已知异常。这是在试图修改实体但未持有正确版本时出现的异常。然而在此处，我们并非要修改而是要删除该实体：</span></li>
 </ul>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">      // remove out-of-context entity</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // 删除上下文外的实体</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">using</span><span style="color:#000000"> (</span><span style="color:#0000ff">var</span><span style="color:#000000"> context = </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RdvMedecinsContext</span><span style="color:#000000">())</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// here we have a new empty context</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// put client1 in the context in a deleted state</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 此处有一个新的空上下文</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 将 client1 置于已删除状态的上下文中</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        context.Entry(client1).State = </span><span style="color:#2b91af">EntityState</span><span style="color:#000000">.Deleted;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// save the context</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 保存上下文</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        context.SaveChanges();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">EF 5 拒绝从数据库中删除 client1，因为 </span><em>client1</em><span style="color: #000000">（第 6 行）的版本不一致。我们在 MySQL 中从未遇到过这个问题。我们逐渐意识到，针对不同数据库管理系统（DBMS）的 ADO.NET 连接器存在细微差异。我们通过以下方式进行修正：</span></p>
+<p><span style="color: #000000">EF 5 拒绝在数据库中删除 client1，因为 </span><em>client1</em><span style="color: #000000">（第 6 行）的版本不一致。 此前在处理 MySQL 时并未遇到此问题。我们逐渐发现，不同 SGBD 对应的 ADO.NET 连接器存在细微差异。修正如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> (<span style="color:#0000ff">var</span> context = <span style="color:#0000ff">new</span> <span style="color:#2b91af">RdvMedecinsContext</span>())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// here we have a new empty context</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// put client1 in the context to delete it</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 此处有一个新的空上下文</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 将 client1 放入上下文中以将其删除</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        context.Clients.Remove(context.Clients.Find(client1.Id));</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// save the context</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 保存上下文</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        context.SaveChanges();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">而且它有效。 </span></p>
-<p><a id="refheading39813804107930"></a></p>
-<h2 id="53-ef-5">5.3. <span style="color: #4f81bd">基于 EF 5 的多层架构</span></h2>
-<p><span style="color: #000000">让我们回到</span><a href="#etude-de-cas"><u><span style="color: #0563c1">第7页</span></u></a><a href="#etude-de-cas"><u><span style="color: #0563c1">第2段</span></u></a><span style="color: #000000">中描述的案例研究。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E20000012737D4B496.png" width="680" height="133" style="display:inline-block; margin:4px;width:17.999cm;height:3.526cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E20000012737D4B496.png" /></td></tr></table>
+<p><span style="color: #000000">这样就成功了。 </span></p>
+<p><span id="refheading39813804107930" name="refheading39813804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="53-ef-5">5.3. <span style="color: #4f81bd">基于 EF 的多层架构 5</span></h2>
+<p><span style="color: #000000">我们回到</span><a href="-nianiu.html#etude-de-cas"><u><span style="color: #0563c1">第7</span></u></a><span style="color: #000000">页</span><a href="-nianiu.html#etude-de-cas"><u><span style="color: #0563c1">第2</span></u></a><span style="color: #000000">段所述的案例研究。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E20000012737D4B496.png" width="680" height="133" style="display:inline-block; margin:4px;width:17.999cm;height:3.526cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E20000012737D4B496.png" /></td></tr></table>
 
-<p><span style="color: #000000">我们将首先构建[DAO]数据访问层。为此，我们将VS 2012控制台项目[RdvMedecins-SqlServer-02]复制为[RdvMedecins-Oracle-02] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005B500000313FD73794A.png" width="680" height="366" style="display:inline-block; margin:4px;width:17.999cm;height:9.696cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B500000313FD73794A.png" /></td></tr></table>
-
-<ul>
-<li><span style="color: #000000">在[2]中，我们删除[RdvMedecins-SqlServer-02]项目；</span></li>
-</ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E000000217D6286DD1.png" width="680" height="242" style="display:inline-block; margin:4px;width:17.999cm;height:6.403cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E000000217D6286DD1.png" /></td></tr></table>
+<p><span style="color: #000000">我们将首先构建数据访问层 [DAO]。 为此，我们将控制台项目 VS 2012 [RdvMedecins-SqlServer-02] 复制到 [RdvMedecins-Oracle-02] [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005B500000313FD73794A.png" width="680" height="366" style="display:inline-block; margin:4px;width:17.999cm;height:9.694cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B500000313FD73794A.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [3] 中，我们将一个现有项目添加到解决方案中。该项目取自刚刚创建的 [RdvMedecins-Oracle-02] 文件夹；</span></li>
-<li><span style="color: #000000">在 [4] 中，新项目的名称与被删除的项目相同。我们将更改其名称；</span></li>
+<li><span style="color: #000000">在 [2] 中，删除项目 [RdvMedecins-SqlServer-02]；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054C00000129D8C214FE.png" width="678" height="148" style="display:inline-block; margin:4px;width:17.939cm;height:3.928cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C00000129D8C214FE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E000000217D6286DD1.png" width="680" height="242" style="display:inline-block; margin:4px;width:17.999cm;height:6.403cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E000000217D6286DD1.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">在 [3] 中，将现有项目添加到解决方案中。该项目取自刚刚创建的 [RdvMedecins-Oracle-02] 文件夹；</span></li>
+<li><span style="color: #000000">在 [4] 中，新项目名称与被删除的项目相同。我们将更改其名称；</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000054C00000129D8C214FE.png" width="678" height="149" style="display:inline-block; margin:4px;width:17.939cm;height:3.93cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C00000129D8C214FE.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [5] 中，我们已更改了项目名称；</span></li>
-<li><span style="color: #000000">在[6]中，我们修改了其中的一些属性，例如此处的程序集名称；</span></li>
-<li><span style="color: #000000">在[7]中，删除了[Models]文件夹，并用[RdvMedecins-Oracle-01]项目中的[Models]文件夹替换。这是因为这两个项目共享相同的模型。</span></li>
+<li><span style="color: #000000">在 [6] 中，修改了其部分属性，例如此处的程序集名称；</span></li>
+<li><span style="color: #000000">在 [7] 中，删除文件夹 [Models]，并用项目 [RdvMedecins-Oracle-01] 中的文件夹 [Models] 替换。因为这两个项目共享相同的模板。</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003070000014159B01D36.png" width="388" height="161" style="display:inline-block; margin:4px;width:10.253cm;height:4.247cm;" class="odt-zoomable" data-zoom-src="images/10000000000003070000014159B01D36.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003070000014159B01D36.png" width="388" height="161" style="display:inline-block; margin:4px;width:10.253cm;height:4.247cm;" class="odt-zoomable" data-zoom-src="images/10000000000003070000014159B01D36.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [8] 中，该项目的当前引用；</span></li>
-<li><span style="color: #000000">在 [9] 中，已使用 NuGet 工具添加了 Oracle ADO.NET 连接器。</span></li>
+<li><span style="color: #000000">在 [8] 中，项目当前的引用；</span></li>
+<li><span style="color: #000000">在 [9] 中，已使用工具 NuGet 添加了 Oracle 连接器 ADO.NET。</span></li>
 </ul>
-<p><span style="color: #000000">在 [App.config] 文件中，将 SQL Server 数据库信息替换为 Oracle 数据库信息。这些信息可在 [RdvMedecins-Oracle-01] 项目的 [App.config] 文件中找到：</span></p>
+<p><span style="color: #000000">在文件 [App.config] 中，将 SQL 服务器数据库中的信息替换为 Oracle 数据库中的信息。这些信息可在项目 [RdvMedecins-Oracle-01] 的文件 [App.config] 中找到：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- connection chain on base --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- 数据库连接字符串 --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">monContexte</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">connectionString</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));User Id=RDVMEDECINS-EF;Password=rdvmedecins;</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">providerName</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- the factory provider --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- 工厂提供者 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.data</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">DbProviderFactories</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">remove</span><span style="color:#0000ff"> </span><span style="color:#ff0000">invariant</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle Data Provider for .NET</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">invariant</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">description</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle Data Provider for .NET</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle Data Provider for .NET</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">invariant</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">description</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle Data Provider for .NET</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Oracle.DataAccess.Client.OracleClientFactory, </span><span style="color:#0000ff">Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">DbProviderFactories</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">system.data</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">Spring 管理的对象也会发生变化。目前我们有：</span></p>
+<p><span style="color: #000000">Spring管理的对象也会发生变化。目前我们有：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- spring configuration --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- Spring配置 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">context</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">resource</span><span style="color:#0000ff"> </span><span style="color:#ff0000">uri</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">config://spring/objects</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
@@ -1044,29 +1046,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">第 7 行引用了 [</span><span style="color: #0000ff">RdvMedecins-SqlServer-02</span><span style="color: #000000">] 项目的程序集。该程序集现已更名为 [</span><span style="color: #0000ff">RdvMedecins-Oracle-02</span><span style="color: #000000">]。</span></p>
-<p><span style="color: #000000">完成上述操作后，我们即可运行 [DAO] 层测试。首先，必须确保数据库已填充数据（使用 [</span><span style="color: #0000ff">RdvMedecins-Oracle-01</span><span style="color: #000000">] 项目中的 [Fill] 程序）。测试程序运行成功。</span></p>
-<p><span style="color: #000000">我们按照处理 [</span><span style="color: #0000ff">RdvMedecins-SqlServer-02</span><span style="color: #000000">] 项目的方法生成该项目的 DLL，并将所有项目 DLL 集中到 [</span><span style="color: #0000ff">RdvMedecins-Oracle-02</span><span style="color: #000000">] 目录下新建的 [lib] 文件夹中。这些文件将作为后续 [</span><span style="color: #0000ff">RdvMedecins-Oracle-03</span><span style="color: #000000">] Web 项目的引用。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000109000000D81CC53409.png" width="186" height="151" style="display:inline-block; margin:4px;width:4.911cm;height:4.002cm;" class="odt-zoomable" data-zoom-src="images/1000000000000109000000D81CC53409.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">第 7 行引用了项目 [RdvMedecins-SqlServer-02] 的程序集。该程序集现已更改为 [RdvMedecins-Oracle-02]。</span></p>
+<p><span style="color: #000000">完成上述操作后，我们已准备好执行 [DAO] 层的测试。在此之前，需先确保填充数据库（即 [RdvMedecins-Oracle-01] 项目中的 [Fill] 程序）。测试程序运行成功。</span></p>
+<p><span style="color: #000000">我们按照之前处理项目[RdvMedecins-SqlServer-02]的方法创建该项目中的DLL，并将项目中所有 DLL 程序，将其归入在 [RdvMedecins-Oracle-02] 中创建的 [lib] 文件夹中。这些将作为后续 Web 项目 [RdvMedecins-Oracle-03] 的参考。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000109000000D81CC53409.png" width="186" height="151" style="display:inline-block; margin:4px;width:4.911cm;height:4.001cm;" class="odt-zoomable" data-zoom-src="images/1000000000000109000000D81CC53409.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">现在，我们准备开始构建应用程序的 [ASP.NET] 层：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005EF00000123C078CDE9.png" width="680" height="130" style="display:inline-block; margin:4px;width:17.999cm;height:3.448cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EF00000123C078CDE9.png" /></td></tr></table>
+<p><span style="color: #000000">现在，我们已准备好构建应用程序的 [ASP.NET] 层：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005EF00000123C078CDE9.png" width="680" height="130" style="display:inline-block; margin:4px;width:17.999cm;height:3.448cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EF00000123C078CDE9.png" /></td></tr></table>
 
-<p><span style="color: #000000">我们将从 [RdvMedecins-SqlServer-03] 项目开始。我们将此项目的文件夹复制为 [RdvMedecins-Oracle-03] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005B500000193A8B44184.png" width="680" height="188" style="display:inline-block; margin:4px;width:17.999cm;height:4.965cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B500000193A8B44184.png" /></td></tr></table>
+<p><span style="color: #000000">我们将以项目 [RdvMedecins-SqlServer-03] 为基础。我们将该项目的文件夹复制到 [RdvMedecins-Oracle-03] 和 [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005B500000193A8B44184.png" width="680" height="188" style="display:inline-block; margin:4px;width:17.999cm;height:4.964cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B500000193A8B44184.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [2] 中，使用 VS 2012 Express for the Web，我们打开 [RdvMedecins-Oracle-03] 文件夹中的解决方案；</span></li>
-<li><span style="color: #000000">在 [3] 中，我们将解决方案名称和项目名称均进行修改；</span></li>
+<li><span style="color: #000000">在 [3] 中，我们将解决方案名称和项目名称进行修改；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A700000179789555CC.png" width="680" height="177" style="display:inline-block; margin:4px;width:17.999cm;height:4.688cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A700000179789555CC.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005A700000179789555CC.png" width="680" height="177" style="display:inline-block; margin:4px;width:17.999cm;height:4.688cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A700000179789555CC.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [4] 中，查看项目当前的引用；</span></li>
-<li><span style="color: #000000">在 [5] 中，我们将其删除；</span></li>
-<li><span style="color: #000000">在 [6] 中，用我们刚刚存储在 [RdvMedecins-Oracle-02] 项目内 [lib] 文件夹中的 DLL 引用替换它们。</span></li>
+<li><span style="color: #000000">在 [4] 中，当前的项目引用；</span></li>
+<li><span style="color: #000000">在 [5] 中，将其删除；</span></li>
+<li><span style="color: #000000">并将其替换为对 DLL 的引用，该文件我们刚刚存储在项目 [RdvMedecins-Oracle-02] 的文件夹 [lib] 中。</span></li>
 </ul>
-<p><span style="color: #000000">剩下的就是修改 [Web.config] 文件。我们将该文件的当前内容替换为 [RdvMedecins-Oracle-02] 项目中 [App.config] 文件的内容。完成此操作后，运行 Web 项目。它运行正常。在运行 Web 应用程序之前，切记要先填充数据库。</span></p>
+<p><span style="color: #000000">接下来只需修改文件 [Web.config]，将其当前内容替换为项目 [RdvMedecins-Oracle-02] 中文件 [App.config] 的内容。完成上述操作后，运行 Web 项目。项目运行正常。 请务必在运行Web应用程序前先填充数据库。</span></p>
 
 
 

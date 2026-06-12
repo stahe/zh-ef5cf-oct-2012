@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -328,14 +330,14 @@
   
   
     <li class="md-nav__item">
-      <a href="-ienianiu.html" class="md-nav__link">
+      <a href="-nianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.  ：一个案例研究
+    2.  案例研究
   
 
     
@@ -382,14 +384,14 @@
   
   
     <li class="md-nav__item">
-      <a href="mysql-5528-nianiu.html" class="md-nav__link">
+      <a href="iu-mysql-5528-enianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. MySQL 5.5.28 案例研究
+    4. 基于 MySQL 5.5.28 的案例研究
   
 
     
@@ -540,20 +542,20 @@
   
 
 
-<p><a id="refheading39831804107930"></a></p>
+<p><span id="refheading39831804107930" name="refheading39831804107930" class="odt-bookmark-anchor"></span></p>
 <h1 id="8">8. <span style="color: #365f91">结论</span></h1>
-<p><span style="color: #000000">在本文中，我们首先探讨了 Entity Framework 5 Code First（EF 5）。随后，我们将以下原本使用 NHibernate ORM 的应用程序进行了移植：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005EA00000115D91908D8.png" width="680" height="124" style="display:inline-block; margin:4px;width:17.999cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EA00000115D91908D8.png" /></td></tr></table>
+<p><span style="color: #000000">在本文中，我们首先了解了 Entity Framework 5 Code First（EF 5）。随后，我们将使用 ORM 和 NHibernate 的应用程序迁移至新环境：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005EA00000115D91908D8.png" width="680" height="124" style="display:inline-block; margin:4px;width:17.999cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EA00000115D91908D8.png" /></td></tr></table>
 
-<p>迁移至以下采用 EF 5 ORM 的架构：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E50000011F327B2216.png" width="680" height="129" style="display:inline-block; margin:4px;width:17.999cm;height:3.424cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E50000011F327B2216.png" /></td></tr></table>
+<p>迁移到以下采用 ORM EF 5 的架构中：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E50000011F327B2216.png" width="680" height="129" style="display:inline-block; margin:4px;width:17.999cm;height:3.424cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E50000011F327B2216.png" /></td></tr></table>
 
-<p>我们使用五种数据库管理系统（DBMS）构建了上述架构。尽管在不同数据库管理系统之间的移植性并非总是100%，但结果依然非常令人满意。 </p>
+<p>我们使用五个 SGBD 构建了该架构。虽然 SGBD 之间的兼容性并非总是 100%，但总体表现非常令人满意。 </p>
 <p>我们总结出以下几点原则：</p>
 <ul>
-<li>所有研究过的DBMS都具备自动生成主键值的机制；</li>
-<li>为管理对数据库实体的并发访问，似乎通过触发器自动递增的整数列是所有系统都认可的解决方案；</li>
-<li>在延迟加载模式下，实体必须封装与其关联的外键值。这样才能从数据库中检索该实体的依赖关系。</li>
+<li>所有研究过的 SGBD 都有自动生成主键值的解决方案；</li>
+<li>为管理数据库中实体访问的并发性，似乎通过触发器自动递增的整数型列是各方认可的解决方案；</li>
+<li>在延迟加载模式下，实体必须封装与其关联的外键值。这使得后续能够从数据库中检索该实体的依赖关系。</li>
 </ul>
 
 

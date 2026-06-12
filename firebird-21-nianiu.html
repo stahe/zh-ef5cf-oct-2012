@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -330,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="-ienianiu.html" class="md-nav__link">
+      <a href="-nianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.  ：一个案例研究
+    2.  案例研究
   
 
     
@@ -384,14 +386,14 @@
   
   
     <li class="md-nav__item">
-      <a href="mysql-5528-nianiu.html" class="md-nav__link">
+      <a href="iu-mysql-5528-enianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. MySQL 5.5.28 案例研究
+    4. 基于 MySQL 5.5.28 的案例研究
   
 
     
@@ -528,7 +530,7 @@
   <a href="#71" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.1. 安装工具
+        7.1. 工具安装
       
     </span>
   </a>
@@ -550,7 +552,7 @@
   <a href="#73-ef-5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3. 基于 EF 5 的多层架构
+        7.3. 基于 EF 的多层架构 5
       
     </span>
   </a>
@@ -612,85 +614,79 @@
   
 
 
-<p><a id="refheading39705804107930-copie-1"></a>
-<a id="refheading39719804107930-copie-1"></a>
-<a id="refheading39733804107930-copie-1"></a>
-<a id="refheading39797804107930-copie-1"></a>
-<a id="refheading39807804107930-copie-1"></a>
-<a id="refheading39815804107930-copie-1"></a>
-<a id="refheading39823804107930"></a></p>
+<p><span id="refheading39823804107930" name="refheading39823804107930" class="odt-bookmark-anchor"></span></p>
 <h1 id="7-firebird-21">7. <span style="color: #365f91">Firebird 2.1 案例研究</span></h1>
-<p><a id="refheading39825804107930"></a></p>
-<h2 id="71">7.1. <span style="color: #4f81bd">安装工具</span></h2>
+<p><span id="refheading39825804107930" name="refheading39825804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="71">7.1. <span style="color: #4f81bd">工具安装</span></h2>
 <p><span style="color: #000000">需要安装的工具如下：</span></p>
 <ul>
-<li>数据库管理系统（DBMS）：[http://www.firebirdsql.org/en/firebird-2-1-5/]；</li>
-<li>管理工具：EMS SQL Manager for InterBase/Firebird 免费版 [http://www.sqlmanager.net/fr/products/ibfb/manager/download]。</li>
+<li>SGBD：[http://www.firebirdsql.org/en/firebird-2-1-5/]；</li>
+<li>一个管理工具：EMS SQL Manager for InterBase/Firebird Freeware [http://www.sqlmanager.net/fr/products/ibfb/manager/download]。</li>
 </ul>
-<p><span style="color: #000000">在下面的示例中，用户名为 </span><strong><span style="color: #000000">sysdba</span></strong><span style="color: #000000">，密码为 </span><strong><span style="color: #000000">masterkey</span></strong><span style="color: #000000">。</span></p>
-<p><span style="color: #000000">让我们启动 Firebird，然后启动 [SQL Manager Lite for Firebird] 工具，我们将使用它来管理该数据库管理系统。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000489000001BC320028A9.png" width="581" height="222" style="display:inline-block; margin:4px;width:15.36cm;height:5.874cm;" class="odt-zoomable" data-zoom-src="images/1000000000000489000001BC320028A9.png" /></td></tr></table>
+<p><span style="color: #000000">在下面的示例中，用户为 sysdba，密码为 </span><strong><span style="color: #000000">masterkey</span></strong><span style="color: #000000">。</span></p>
+<p><span style="color: #000000">启动 Firebird，然后启动 [SQL Manager Lite for Firebird] 工具，我们将用它来管理 SGBD。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000489000001BC320028A9.png" width="581" height="222" style="display:inline-block; margin:4px;width:15.36cm;height:5.874cm;" class="odt-zoomable" data-zoom-src="images/1000000000000489000001BC320028A9.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[1]中，我们通过“开始”菜单启动 Firebird DBMS。在此，该 DBMS 尚未作为 Windows 服务安装；</span></li>
-<li><span style="color: #000000">在[2]中，服务已启动。屏幕右下角会出现一个图标。右键单击该图标即可停止数据库管理系统。</span></li>
+<li><span style="color: #000000">在 [1] 中，我们通过“开始”菜单启动 SGBD Firebird。此处，SGBD 未作为 Windows 服务安装；</span></li>
+<li><span style="color: #000000">在 [2] 中，服务已启动。屏幕右下角出现了一个图标。右键单击该图标，即可停止 SGBD。</span></li>
 </ul>
-<p><span style="color: #000000">现在我们启动 [SQL Manager Lite for Firebird] 工具，我们将使用它来管理该数据库管理系统 [3]。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006280000022311E20850.png" width="680" height="236" style="display:inline-block; margin:4px;width:17.999cm;height:6.248cm;" class="odt-zoomable" data-zoom-src="images/10000000000006280000022311E20850.png" /></td></tr></table>
+<p><span style="color: #000000">现在我们启动工具 [SQL Manager Lite for Firebird]，用于管理 SGBD 和 [3]。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006280000022311E20850.png" width="680" height="236" style="display:inline-block; margin:4px;width:17.999cm;height:6.248cm;" class="odt-zoomable" data-zoom-src="images/10000000000006280000022311E20850.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[4]中，我们创建了一个新数据库；</span></li>
-<li><span style="color: #000000">在[5]中，我们进行了确认；</span></li>
+<li><span style="color: #000000">在 [4] 中，我们创建一个新数据库；</span></li>
+<li><span style="color: #000000">在 [5] 中，我们接受；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FF0000025D783ECCE2.png" width="680" height="268" style="display:inline-block; margin:4px;width:17.999cm;height:7.094cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FF0000025D783ECCE2.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005FF0000025D783ECCE2.png" width="680" height="268" style="display:inline-block; margin:4px;width:17.999cm;height:7.094cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FF0000025D783ECCE2.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [5] 中，我们以 SYSDBA / masterkey 身份登录；</span></li>
-<li><span style="color: #000000">在 [6] 中，指定要创建的文件的位置。数据库将作为单个文件创建；</span></li>
-<li><span style="color: #000000">在 [7] 中，我们验证待执行的 SQL 语句；</span></li>
+<li><span style="color: #000000">在 [5] 中，以 SYSDBA / masterkey 身份登录；</span></li>
+<li><span style="color: #000000">在 [6] 中，指定将要创建的文件位置。实际上，数据库将创建在一个单独的文件中；</span></li>
+<li><span style="color: #000000">在 [7] 中，确认将要执行的 SQL 命令；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006360000023C89BCF940.png" width="680" height="245" style="display:inline-block; margin:4px;width:17.999cm;height:6.475cm;" class="odt-zoomable" data-zoom-src="images/10000000000006360000023C89BCF940.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006360000023C89BCF940.png" width="680" height="245" style="display:inline-block; margin:4px;width:17.999cm;height:6.473cm;" class="odt-zoomable" data-zoom-src="images/10000000000006360000023C89BCF940.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [8] 中，数据库已创建。现在必须在 [EMS Manager] 中注册该数据库。信息正确。点击 [确定]；</span></li>
-<li><span style="color: #000000">在 [9] 中，登录该数据库；</span></li>
-<li><span style="color: #000000">在[10]中，[EMS Manager]显示了该数据库，目前该数据库为空。</span></li>
+<li><span style="color: #000000">在 [8] 中，数据库已创建。现在需将其保存至 [EMS Manager]。信息无误。执行 [OK]；</span></li>
+<li><span style="color: #000000">在 [9] 中，我们登录该数据库；</span></li>
+<li><span style="color: #000000">在 [10] 中，[EMS Manager] 显示了该数据库，目前为空。</span></li>
 </ul>
-<p><span style="color: #000000">接下来，我们将把一个 VS 2012 项目连接到此数据库。</span></p>
-<p><a id="refheading39827804107930"></a></p>
+<p><span style="color: #000000">现在我们将一个2012版的VS项目连接到该数据库。</span></p>
+<p><span id="refheading39827804107930" name="refheading39827804107930" class="odt-bookmark-anchor"></span></p>
 <h2 id="72">7.2. <span style="color: #4f81bd">基于实体创建数据库</span></h2>
-<p><span style="color: #000000">首先，我们将 [RdvMedecins-SqlServer-01] 项目文件夹复制为 [RdvMedecins-Firebird-01] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059E00000313F7EE85CB.png" width="680" height="372" style="display:inline-block; margin:4px;width:17.999cm;height:9.851cm;" class="odt-zoomable" data-zoom-src="images/100000000000059E00000313F7EE85CB.png" /></td></tr></table>
+<p><span style="color: #000000">首先，我们将项目 [RdvMedecins-SqlServer-01] 的文件夹复制到 [RdvMedecins-Firebird-01] 和 [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000059E00000313F7EE85CB.png" width="680" height="372" style="display:inline-block; margin:4px;width:17.999cm;height:9.85cm;" class="odt-zoomable" data-zoom-src="images/100000000000059E00000313F7EE85CB.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [2] 中，在 VS 2012 中，我们将 [RdvMedecins-SqlServer-01] 项目从解决方案中移除；</span></li>
+<li><span style="color: #000000">在 [2] 中，在 VS 2012 中，我们将项目 [RdvMedecins-SqlServer-01] 从解决方案中删除；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000061E0000028F52A98BEE.png" width="680" height="285" style="display:inline-block; margin:4px;width:17.999cm;height:7.528cm;" class="odt-zoomable" data-zoom-src="images/100000000000061E0000028F52A98BEE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000061E0000028F52A98BEE.png" width="680" height="285" style="display:inline-block; margin:4px;width:17.999cm;height:7.528cm;" class="odt-zoomable" data-zoom-src="images/100000000000061E0000028F52A98BEE.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [3] 中，该项目已被移除；</span></li>
-<li><span style="color: #000000">在 [4] 中，我们添加另一个项目。该项目取自我们之前创建的 [RdvMedecins-Firebird-01] 文件夹；</span></li>
+<li><span style="color: #000000">在 [3] 中，该项目已被删除；</span></li>
+<li><span style="color: #000000">在 [4] 中，我们添加了另一个项目。该项目位于我们之前创建的 [RdvMedecins-Firebird-01] 文件夹中；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000032A0000014F0BB08346.png" width="405" height="168" style="display:inline-block; margin:4px;width:10.716cm;height:4.433cm;" class="odt-zoomable" data-zoom-src="images/100000000000032A0000014F0BB08346.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000032A0000014F0BB08346.png" width="405" height="168" style="display:inline-block; margin:4px;width:10.716cm;height:4.433cm;" class="odt-zoomable" data-zoom-src="images/100000000000032A0000014F0BB08346.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [5] 中，加载的项目名为 [RdvMedecins-SqlServer-01]；</span></li>
-<li><span style="color: #000000">在 [6] 中，我们将它的名称更改为 [RdvMedecins-Firebird-01]</span></li>
+<li><span style="color: #000000">在 [6] 中，将其重命名为 [RdvMedecins-Firebird-01]</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005F00000023FF2CB05B4.png" width="680" height="257" style="display:inline-block; margin:4px;width:17.999cm;height:6.809cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F00000023FF2CB05B4.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005F00000023FF2CB05B4.png" width="680" height="257" style="display:inline-block; margin:4px;width:17.999cm;height:6.809cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F00000023FF2CB05B4.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [7] 中，我们将另一个项目添加到解决方案中。该项目取自先前从解决方案中移除的项目的 [RdvMedecins-SqlServer-01] 文件夹；</span></li>
-<li><span style="color: #000000">在 [8] 中，[RdvMedecins-SqlServer-01] 项目已重新添加到解决方案中。</span></li>
+<li><span style="color: #000000">在 [7] 中，向解决方案中添加了另一个项目。该项目位于我们之前从解决方案中删除的 [RdvMedecins-SqlServer-01] 项目文件夹中；</span></li>
+<li><span style="color: #000000">在 [8] 中，项目 [RdvMedecins-SqlServer-01] 已重新加入到解决方案中。</span></li>
 </ul>
-<p><span style="color: #000000">[RdvMedecins-Firebird-01] 项目与 [RdvMedecins-SqlServer-01] 项目完全相同。我们需要进行一些修改。在 [App.config] 中，我们将修改连接字符串和 [DbProviderFactory]，这些内容必须根据不同的数据库管理系统（DBMS）进行适配。</span></p>
+<p><span style="color: #000000">项目 [RdvMedecins-Firebird-01] 与项目 [RdvMedecins-SqlServer-01] 完全相同。我们需要进行一些修改。 在 [App.config] 中，我们将修改连接字符串，并需将 [DbProviderFactory] 适配至每个 SGBD。</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- connection chain on base --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- 数据库连接字符串 --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">monContexte</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">connectionString</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">User=SYSDBA;Password=masterkey;Database=D:\data\istia-1213\c#\dvp\Entity Framework\databases\firebird\RDVMEDECINS-EF.GDB;DataSource=localhost;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Port=3050;Dialect=3;Charset=NONE;Role=;Connection lifetime=15;Pooling=true;MinPoolSize=0;MaxPoolSize=50;Packet Size=8192;ServerType=0;</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">providerName</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">FirebirdSql.Data.FirebirdClient</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- the factory provider --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- 工厂提供程序 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.data</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">DbProviderFactories</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Firebird Client Data Provider</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">invariant</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">FirebirdSql.Data.FirebirdClient</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">description</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">.Net Framework Data Provider for Firebird</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">FirebirdSql.Data.FirebirdClient.FirebirdClientFactory, FirebirdSql.Data.FirebirdClient, Version=2.7.7.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
@@ -699,50 +695,50 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">第 3 行：用户名和密码，以及 Firebird 数据库的完整路径；</span></li>
-<li><span style="color: #000000">第 8–10 行：</span><em>DbProviderFactory</em><span style="color: #000000">。第 9 行引用了一个我们尚未拥有的 DLL [</span><span style="color: #0000ff">FirebirdSql.Data.FirebirdClient</span><span style="color: #000000">]。我们可以使用 NuGet [1] 获取它：</span></li>
+<li><span style="color: #000000">第3行：用户名、密码以及Firebird数据库的完整路径；</span></li>
+<li><span style="color: #000000">第8-10行：</span><em>DbProviderFactory</em><span style="color: #000000">。第9行引用了DLL和[FirebirdSql.Data.FirebirdClient]，但我们没有这两个文件。 可通过 NuGet [1] 获取该文件：</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006150000011CB024F99D.png" width="680" height="124" style="display:inline-block; margin:4px;width:17.999cm;height:3.283cm;" class="odt-zoomable" data-zoom-src="images/10000000000006150000011CB024F99D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006150000011CB024F99D.png" width="680" height="124" style="display:inline-block; margin:4px;width:17.999cm;height:3.283cm;" class="odt-zoomable" data-zoom-src="images/10000000000006150000011CB024F99D.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [2] 中，在搜索框中输入关键词</span><em>“firebird”</em><span style="color: #000000">；</span></li>
+<li><span style="color: #000000">在 [2] 中，于搜索框内输入关键词 </span><em>firebird</em><span style="color: #000000">；</span></li>
 <li><span style="color: #000000">在 [3] 中，选择 [Firebird ADO.NET Data Provider] 包。这是一个用于 Firebird 的 ADO.NET 连接器；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000041C000002721D31ED68.png" width="526" height="313" style="display:inline-block; margin:4px;width:13.917cm;height:8.281cm;" class="odt-zoomable" data-zoom-src="images/100000000000041C000002721D31ED68.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000041C000002721D31ED68.png" width="526" height="313" style="display:inline-block; margin:4px;width:13.917cm;height:8.281cm;" class="odt-zoomable" data-zoom-src="images/100000000000041C000002721D31ED68.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [4] 中，添加新的引用；</span></li>
-<li><span style="color: #000000">在 [5] 中，即 [App.config] 文件中，您必须指定 DLL 的正确版本。您可以在其属性中找到该版本信息。</span></li>
+<li><span style="color: #000000">在 [4] 中，新的参考编号；</span></li>
+<li><span style="color: #000000">在 [5] 中，对于 [App.config]，需填写 DLL 的正确版本号。该版本号可在其属性中找到。</span></li>
 </ul>
-<p><span style="color: #000000">在 [Entities.cs] 文件中，您需要调整将要生成的表的架构：</span></p>
+<p><span style="color: #000000">在文件 [Entites.cs] 中，需调整即将生成的表的结构：</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;MEDECINS&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Medecin</span><span style="color:#000000"> : </span><span style="color:#2b91af">Personne</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;CLIENTS&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Client</span><span style="color:#000000"> : </span><span style="color:#2b91af">Personne</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;CRENEAUX&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Creneau</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;RVS&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Rv</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">在此，这些表没有模式。</span></p>
-<p><span style="color: #000000">我们配置项目的执行：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000034B0000012B5D7C3ED0.png" width="422" height="150" style="display:inline-block; margin:4px;width:11.153cm;height:3.956cm;" class="odt-zoomable" data-zoom-src="images/100000000000034B0000012B5D7C3ED0.png" /></td></tr></table>
+<p><span style="color: #000000">此处表没有模式。</span></p>
+<p><span style="color: #000000">我们配置项目的运行：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000034B0000012B5D7C3ED0.png" width="422" height="150" style="display:inline-block; margin:4px;width:11.153cm;height:3.956cm;" class="odt-zoomable" data-zoom-src="images/100000000000034B0000012B5D7C3ED0.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [1] 中，我们为将要生成的程序集指定了一个不同的名称；</span></li>
-<li><span style="color: #000000">在 [2] 中，我们还指定了一个不同的默认命名空间；</span></li>
-<li><span style="color: #000000">在 [3] 中，我们指定了要执行的程序。</span></li>
+<li><span style="color: #000000">在 [1] 中，为即将生成的程序集指定了另一个名称；</span></li>
+<li><span style="color: #000000">在 [2] 中，同时指定另一个默认命名空间；</span></li>
+<li><span style="color: #000000">在 [3] 中，指定要执行的程序。</span></li>
 </ul>
-<p><span style="color: #000000">在此阶段，没有编译错误。让我们运行 [CreateDB_01] 程序。我们得到以下异常：</span></p>
+<p><span style="color: #000000">至此，编译未出现错误。运行程序 [CreateDB_01]。会得到以下异常：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -763,64 +759,64 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>   à RdvMedecins_01.CreateDB_01.Main(String[] args) dans d:\data\istia-1213\c#\d
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>vp\Entity Framework\RdvMedecins\RdvMedecins-Oracle-01\CreateDB_01.cs:ligne 15
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">我们记得在 MySQL、Oracle 和 PostgreSQL 中都遇到过相同的错误。这与实体中 </span><em><span style="color: #000000">Timestamp</span></em><span style="color: #000000"> 字段的类型有关。我们进行与前两个数据库管理系统相同的修改。在实体中，我们将以下三行代码替换为</span></p>
+<p><span style="color: #000000">我们记得在处理MySQL、Oracle和PostgreSQL时也遇到过同样的错误。这与实体中字段</span><em><span style="color: #000000">Timestamp</span></em><span style="color: #000000">的类型有关。 我们采用与前两个SGBD相同的修改方式。在实体中，我们将以下三行</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Column</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;TIMESTAMP&quot;</span><span style="color:#000000">)]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Timestamp</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">byte</span><span style="color:#000000">[] Timestamp { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000"> 如下所示：</span></p>
+<p><span style="color: #000000"> 替换为以下内容：</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">ConcurrencyCheck</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Column</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;VERSIONING&quot;</span><span style="color:#000000">)]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">int</span><span style="color:#000000">? Versioning { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">因此，我们将该列的类型从 </span><strong><span style="color: #000000">byte[]</span></strong><span style="color: #000000"> 改为 </span><strong><span style="color: #000000">int?</span></strong><span style="color: #000000">。在数据库管理系统中，我们将使用存储过程，在每次插入或修改行时将该整数递增 1。</span></p>
-<p><span style="color: #000000">我们对所有四个实体都进行了上述修改，然后重新运行应用程序。随后我们收到以下错误：</span></p>
+<p><span style="color: #000000">因此，我们将该列的类型从 </span><strong><span style="color: #000000">byte[]</span></strong><span style="color: #000000"> 更改为 </span><strong><span style="color: #000000">int?</span></strong><span style="color: #000000">。在 SGBD 中，我们将使用存储过程，在每次插入或修改行时将该整数递增 1。</span></p>
+<p><span style="color: #000000">对这四个实体进行上述修改后，我们重新运行应用程序。随后出现以下错误：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Exception non gérée : FirebirdSql.Data.FirebirdClient.FbException: lock time-out on wait transaction object D:\DATA\ISTIA-1213\C#\DVP\ENTITY FRAMEWORK\DATABASES\FIREBIRD\RDVMEDECINS-EF.GDB is in use ---&gt; FirebirdSql.Data.Common.IscException: lock time-out on wait transaction
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Exception non gérée : FirebirdSql.Data.FirebirdClient.FbException: lock time-out on wait transaction object D:\DATA\ISTIA-1213\C#\DVP\ENTITY FRAMEWORK\DATABASES\FIREBIRD\RDVMEDECINS-EF.GDB 正在使用中 ---&gt; FirebirdSql.Data.Common.IscException：等待事务的锁超时
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>object D:\DATA\ISTIA-1213\C#\DVP\ENTITY FRAMEWORK\DATABASES\FIREBIRD\RDVMEDECINS
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a>-EF.GDB is in use
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>...
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>   à RdvMedecins_01.CreateDB_01.Main(String[] args) dans d:\data\istia-1213\c#\dvp\Entity Framework\RdvMedecins\RdvMedecins-Firebird-01\CreateDB_01.cs:ligne 15
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>   à RdvMedecins_01.CreateDB_01.Main(String[] args) dans d:\data\istia-1213\c#\dvp\Entity Framework\RdvMedecins\RdvMedecins-Firebird-01\CreateDB_01.cs:第 15 行
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">第 1 行提示数据库正在使用中。我认为并非如此，且未能解决此问题。</span></p>
-<p><span style="color: #000000">算了。我们将使用 [EMS Manager for Firebird] 工具手动创建 [RDVMEDECINS-EF] 数据库。本文不会详细描述每个步骤，仅介绍最重要的步骤。</span></p>
+<p><span style="color: #000000">第 1 行提示数据库已被占用。据我观察，此前并未出现这种情况，且我未能解决此问题。</span></p>
+<p><span style="color: #000000">没关系。我们将使用工具 [EMS Manager for Firebird] 手动构建数据库 [RDVMEDECINS-EF]。我们不会描述所有步骤，仅介绍最重要的部分。</span></p>
 <p><span style="color: #000000">Firebird 数据库结构如下：</span></p>
 <p><u><strong><span style="color: #000000">表</span></strong></u></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046E000001663A187D89.png" width="567" height="179" style="display:inline-block; margin:4px;width:15.002cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/100000000000046E000001663A187D89.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000046E000001663A187D89.png" width="567" height="179" style="display:inline-block; margin:4px;width:15.002cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/100000000000046E000001663A187D89.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[1]中，<code>ID</code>是一个带有<code>&lt;/span&gt;*Autoincrement</code>*<span style="color: #000000">属性的主键。它将由数据库管理系统自动生成；</span></li>
+<li><span style="color: #000000">在 [1] 中，ID 作为主键，其属性为 </span><em>Autoincrement</em><span style="color: #000000">。该主键将由 SGBD 自动生成；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004770000016D067DD8E6.png" width="572" height="183" style="display:inline-block; margin:4px;width:15.122cm;height:4.83cm;" class="odt-zoomable" data-zoom-src="images/10000000000004770000016D067DD8E6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004770000016D067DD8E6.png" width="572" height="183" style="display:inline-block; margin:4px;width:15.122cm;height:4.83cm;" class="odt-zoomable" data-zoom-src="images/10000000000004770000016D067DD8E6.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000478000001E960B3B616.png" width="572" height="244" style="display:inline-block; margin:4px;width:15.134cm;height:6.468cm;" class="odt-zoomable" data-zoom-src="images/1000000000000478000001E960B3B616.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000478000001E960B3B616.png" width="572" height="245" style="display:inline-block; margin:4px;width:15.134cm;height:6.47cm;" class="odt-zoomable" data-zoom-src="images/1000000000000478000001E960B3B616.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047A0000018BB7EFF31B.png" width="573" height="198" style="display:inline-block; margin:4px;width:15.161cm;height:5.226cm;" class="odt-zoomable" data-zoom-src="images/100000000000047A0000018BB7EFF31B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000047A0000018BB7EFF31B.png" width="573" height="198" style="display:inline-block; margin:4px;width:15.161cm;height:5.226cm;" class="odt-zoomable" data-zoom-src="images/100000000000047A0000018BB7EFF31B.png" /></td></tr></table>
 
-<p><span style="color: #000000">这些表的主键和外键与前面的示例中的相同。这些外键具有 ON DELETE CASCADE 属性。</span></p>
+<p><span style="color: #000000">各表的主键和外键与前面的示例中相同。外键的属性分别为 ON、DELETE 和 CASCADE。</span></p>
 <p><u><strong><span style="color: #000000">生成器</span></strong></u></p>
-<p><span style="color: #000000">与 Oracle 和 PostgreSQL 一样，我们创建了序列号生成器。共有 5 个 [1]。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000171000000DBF7C3425B.png" width="185" height="109" style="display:inline-block; margin:4px;width:4.882cm;height:2.896cm;" class="odt-zoomable" data-zoom-src="images/1000000000000171000000DBF7C3425B.png" /></td></tr></table>
+<p><span style="color: #000000">与 Oracle 和 PostgreSQL 类似，我们创建了连续数字生成器。共有 5 个：[1]。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000171000000DBF7C3425B.png" width="185" height="110" style="display:inline-block; margin:4px;width:4.882cm;height:2.898cm;" class="odt-zoomable" data-zoom-src="images/1000000000000171000000DBF7C3425B.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">[CLIENTS_ID_GEN] 将用于生成 [CLIENTS] 表的主键；</span></li>
-<li><span style="color: #000000">[MEDECINS_ID_GEN] 将用于生成 [MEDECINS] 表的主键；</span></li>
-<li><span style="color: #000000">[CRENEAUX_ID_GEN] 将用于生成 [CRENEAUX] 表的主键；</span></li>
-<li><span style="color: #000000">[RVS_ID_GEN] 将用于生成 [RVS] 表的主键；</span></li>
+<li><span style="color: #000000">[CLIENTS_ID_GEN] 将用于生成表 [CLIENTS] 的主键；</span></li>
+<li><span style="color: #000000">[MEDECINS_ID_GEN] 将用于生成表 [MEDECINS] 的主键；</span></li>
+<li><span style="color: #000000">[CRENEAUX_ID_GEN] 将用于生成表 [CRENEAUX] 的主键；</span></li>
+<li><span style="color: #000000">[RVS_ID_GEN] 将用于生成表 [RVS] 的主键；</span></li>
 <li><span style="color: #000000">[VERSIONS_GEN] 将用于生成所有表中 [VERSIONING] 列的值。</span></li>
 </ul>
 <p><u><strong><span style="color: #000000">触发器</span></strong></u></p>
-<p><span style="color: #000000">触发器是在表中发生某个事件（插入、更新、删除）之前或之后由数据库管理系统（DBMS）执行的存储过程。我们共有 8 个触发器 [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002260000013EAF13000E.png" width="275" height="159" style="display:inline-block; margin:4px;width:7.276cm;height:4.207cm;" class="odt-zoomable" data-zoom-src="images/10000000000002260000013EAF13000E.png" /></td></tr></table>
+<p><span style="color: #000000">触发器是由 SGBD 在表中发生某项事件（插入、修改、删除）之前或之后执行的存储过程。我们共有 8 个 [1]：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002260000013EAF13000E.png" width="275" height="159" style="display:inline-block; margin:4px;width:7.276cm;height:4.207cm;" class="odt-zoomable" data-zoom-src="images/10000000000002260000013EAF13000E.png" /></td></tr></table>
 
-<p><span style="color: #000000">让我们来看一下 [BI_CLIENTS_ID] 触发器的 DDL 代码，该触发器用于填充 [CLIENTS] 表的 [ID] 列：</span></p>
+<p><span style="color: #000000">让我们查看触发器 [BI_CLIENTS_ID] 的代码 DDL，该触发器为表 [CLIENTS] 的列 [ID] 提供数据：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -838,11 +834,11 @@
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">END</span><span class="o">^</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">第 2 行：在向 [CLIENTS] 表插入数据之前；</span></li>
-<li><span style="color: #000000">第 6-7 行：如果 ID 列为 NULL，则将其赋值为 [CLIENTS_ID_GEN] 编号生成器中的下一个值。</span></li>
+<li><span style="color: #000000">第 2 行：在向表 [CLIENTS] 插入数据之前；</span></li>
+<li><span style="color: #000000">第6-7行：如果列ID的值为NULL，则将其赋值为随机数生成器[CLIENTS_ID_GEN]的下一个值。</span></li>
 </ul>
-<p><span style="color: #000000">触发器 [BI_CLIENTS_ID、BI_MEDECINS_ID、BI_CRENEAUX_ID、BI_RVS_ID] 均按相同方式构建。</span></p>
-<p><span style="color: #000000">现在让我们看看 [CLIENTS_VERSION_TRIGGER] 触发器的 DDL 代码，该触发器用于填充 [CLIENTS] 表的 [VERSIONING] 列：</span></p>
+<p><span style="color: #000000">[ BI_CLIENTS_ID, BI_MEDECINS_ID, BI_CRENEAUX_ID, BI_RVS_ID] 触发器均按此方式构建。</span></p>
+<p><span style="color: #000000">现在我们来看触发器 [CLIENTS_VERSION_TRIGGER] 的代码 DDL，该触发器为表 [CLIENTS] 的列 [VERSIONING] 提供数据：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -858,50 +854,50 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">END</span><span class="o">^</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">第 1–3 行：在 [CLIENTS] 表上的每次 INSERT 或 UPDATE 操作之前；</span></li>
-<li><span style="color: #000000">第 6 行：[&quot;VERSIONING&quot;] 列从数字生成器 [VERSIONS_GEN] 获取下一个值。该生成器负责填充这四个表的 [&quot;VERSIONING&quot;] 列。</span></li>
+<li><span style="color: #000000">第 1-3 行：在表 [CLIENTS] 上执行每次 INSERT 或 UPDATE 操作之前；</span></li>
+<li><span style="color: #000000">第 6 行：[&quot;VERSIONING&quot;] 列从 [VERSIONS_GEN] 随机数生成器接收以下值。该生成器为四个表的 [&quot;VERSIONING&quot;] 列提供数据。</span></li>
 </ul>
-<p><span style="color: #000000">触发器 [MEDECINS_VERSION_TRIGGER、CRENEAUX_VERSION_TRIGGER、RVS_VERSION_TRIGGER] 的工作原理类似。</span></p>
-<p><span style="color: #000000">用于在 Firebird 数据库 [RDVMEDECINS-EF] 中生成表的脚本已放置在 [RdvMedecins / databases / Firebird] 文件夹中。读者可以加载并运行该脚本以创建表。</span></p>
-<p><span style="color: #000000">完成此操作后，即可运行项目中的各项程序。这些程序生成的结果与在 SQL Server 上的结果相同，但 [ModifyDetachedEntities] 程序除外——该程序会因与在 Oracle 和 MySQL 上相同的理由而崩溃。解决此问题的方法也相同。 只需将 [RdvMedecins-Oracle-01] 项目中的 [ModifyDetachedEntities] 程序复制到 [RdvMedecins-Firebird-01] 项目中即可。</span></p>
-<p><a id="refheading39829804107930"></a></p>
-<h2 id="73-ef-5">7.3. <span style="color: #4f81bd">基于 EF 5 的多层架构</span></h2>
-<p><span style="color: #000000">我们回到</span><a href="#etude-de-cas"><u><span style="color: #0563c1">第 2</span></u></a><span style="color: #000000"> 段中描述的案例研究。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E80000012562EE9C27.png" width="680" height="132" style="display:inline-block; margin:4px;width:17.999cm;height:3.487cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E80000012562EE9C27.png" /></td></tr></table>
+<p><span style="color: #000000">触发器 [MEDECINS_VERSION_TRIGGER, CRENEAUX_VERSION_TRIGGER, RVS_VERSION_TRIGGER] 的工作原理与此类似。</span></p>
+<p><span style="color: #000000">Firebird 数据库表生成脚本 [RDVMEDECINS-EF] 已放置在 [RdvMedecins / databases / Firebird] 文件夹中。读者可加载并执行该脚本以创建表。</span></p>
+<p><span style="color: #000000">完成上述操作后，即可运行该项目的各个程序。它们产生的结果与 SQL Server 相同，但 [ModifyDetachedEntities] 程序除外——该程序会因与 Oracle 及 MySQL 出现故障时相同的原因而崩溃。 解决该问题的方法相同。只需将 [RdvMedecins-Oracle-01] 项目中的 [ModifyDetachedEntities] 程序复制到 [RdvMedecins-Firebird-01] 项目中即可。</span></p>
+<p><span id="refheading39829804107930" name="refheading39829804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="73-ef-5">7.3. <span style="color: #4f81bd">基于 EF 的多层架构 5</span></h2>
+<p><span style="color: #000000">让我们回到</span><a href="-nianiu.html#etude-de-cas"><u><span style="color: #0563c1">第2</span></u></a><span style="color: #000000">段中描述的案例研究。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E80000012562EE9C27.png" width="680" height="132" style="display:inline-block; margin:4px;width:17.999cm;height:3.487cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E80000012562EE9C27.png" /></td></tr></table>
 
-<p><span style="color: #000000">我们将首先构建 [DAO] 数据访问层。为此，我们将 VS 2012 控制台项目 [RdvMedecins-SqlServer-02] 复制为 [RdvMedecins-Firebird-02] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005B9000003027D45252E.png" width="680" height="358" style="display:inline-block; margin:4px;width:17.999cm;height:9.46cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B9000003027D45252E.png" /></td></tr></table>
-
-<ul>
-<li><span style="color: #000000">在[2]中，我们删除[RdvMedecins-SqlServer-02]项目；</span></li>
-</ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005EA00000220B54D5B33.png" width="680" height="244" style="display:inline-block; margin:4px;width:17.999cm;height:6.466cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EA00000220B54D5B33.png" /></td></tr></table>
+<p><span style="color: #000000">我们将首先构建数据访问层 [DAO]。 为此，我们将控制台项目 VS 2012 [RdvMedecins-SqlServer-02] 复制到 [RdvMedecins-Firebird-02] [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005B9000003027D45252E.png" width="680" height="357" style="display:inline-block; margin:4px;width:17.999cm;height:9.458cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B9000003027D45252E.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[3]中，我们将一个现有项目添加到解决方案中。该项目取自刚刚创建的[RdvMedecins-Firebird-02]文件夹；</span></li>
-<li><span style="color: #000000">在 [4] 中，新项目的名称与被删除的项目相同。我们将更改其名称；</span></li>
+<li><span style="color: #000000">在 [2] 中，删除项目 [RdvMedecins-SqlServer-02]；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006300000014C028DE9A6.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.999cm;height:3.773cm;" class="odt-zoomable" data-zoom-src="images/10000000000006300000014C028DE9A6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005EA00000220B54D5B33.png" width="680" height="244" style="display:inline-block; margin:4px;width:17.999cm;height:6.466cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EA00000220B54D5B33.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">在 [3] 中，将现有项目添加到解决方案中。该项目取自刚刚创建的 [RdvMedecins-Firebird-02] 文件夹；</span></li>
+<li><span style="color: #000000">在 [4] 中，新项目名称与被删除的项目相同。我们将更改其名称；</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006300000014C028DE9A6.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.999cm;height:3.771cm;" class="odt-zoomable" data-zoom-src="images/10000000000006300000014C028DE9A6.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [5] 中，我们已更改了项目名称；</span></li>
-<li><span style="color: #000000">在 [6] 中，我们修改了部分属性，例如此处的装配体名称；</span></li>
-<li><span style="color: #000000">在[7]中，删除了[Models]文件夹，并用[RdvMedecins-Firebird-01]项目中的[Models]文件夹替换。这是因为这两个项目共享相同的模型。</span></li>
+<li><span style="color: #000000">在 [6] 中，修改了其部分属性，例如此处的程序集名称；</span></li>
+<li><span style="color: #000000">在 [7] 中，删除文件夹 [Models]，并用项目 [RdvMedecins-Firebird-01] 中的文件夹 [Models] 替换。因为这两个项目共享相同的模板。</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000032400000144B71DEA87.png" width="402" height="162" style="display:inline-block; margin:4px;width:10.636cm;height:4.286cm;" class="odt-zoomable" data-zoom-src="images/100000000000032400000144B71DEA87.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000032400000144B71DEA87.png" width="402" height="162" style="display:inline-block; margin:4px;width:10.636cm;height:4.286cm;" class="odt-zoomable" data-zoom-src="images/100000000000032400000144B71DEA87.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[8]中，该项目的当前引用；</span></li>
-<li><span style="color: #000000">在 [9] 中，已使用 NuGet 工具添加了 Firebird ADO.NET 连接器。</span></li>
+<li><span style="color: #000000">在 [8] 中，项目当前的引用；</span></li>
+<li><span style="color: #000000">在 [9] 中，已使用工具 NuGet 添加了 Firebird 连接器 ADO.NET。</span></li>
 </ul>
-<p><span style="color: #000000">在 [App.config] 文件中，将 SQL Server 数据库信息替换为 Firebird 数据库信息。这些信息可在 [RdvMedecins-Firebird-01] 项目的 [App.config] 文件中找到：</span></p>
+<p><span style="color: #000000">在文件 [App.config] 中，将 SQL Server 数据库的信息替换为 Firebird 数据库的信息。这些信息可在项目 [RdvMedecins-Firebird-01] 的文件 [App.config] 中找到：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- connection chain on base --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- 数据库连接字符串 --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">monContexte</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">connectionString</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">User=SYSDBA;Password=masterkey;Database=D:\data\istia-1213\c#\dvp\Entity Framework\databases\firebird\RDVMEDECINS-EF.GDB;DataSource=localhost;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">Port=3050;Dialect=3;Charset=NONE;Role=;Connection lifetime=15;Pooling=true;MinPoolSize=0;MaxPoolSize=50;Packet Size=8192;ServerType=0;</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">providerName</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">FirebirdSql.Data.FirebirdClient</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- the factory provider --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- 工厂提供程序 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.data</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">DbProviderFactories</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Firebird Client Data Provider</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">invariant</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">FirebirdSql.Data.FirebirdClient</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">description</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">.Net Framework Data Provider for Firebird</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">FirebirdSql.Data.FirebirdClient.FirebirdClientFactory, FirebirdSql.Data.FirebirdClient, Version=2.7.7.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
@@ -911,7 +907,7 @@
 
 <p><span style="color: #000000">Spring管理的对象也会发生变化。目前我们有：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- spring configuration --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- Spring配置 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">context</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">resource</span><span style="color:#0000ff"> </span><span style="color:#ff0000">uri</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">config://spring/objects</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
@@ -922,29 +918,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">第 7 行引用了 [</span><span style="color: #0000ff">RdvMedecins-SqlServer-02</span><span style="color: #000000">] 项目的程序集。该程序集现已更名为 [</span><span style="color: #0000ff">RdvMedecins-Firebird-02</span><span style="color: #000000">]。</span></p>
-<p><span style="color: #000000">完成上述操作后，我们即可运行 [DAO] 层的测试。首先，必须确保数据库已填充数据（使用 [</span><span style="color: #0000ff">RdvMedecins-Firebird-01</span><span style="color: #000000">] 项目中的 [Fill] 程序）。测试程序通过。</span></p>
-<p><span style="color: #000000">我们按照处理 [</span><span style="color: #0000ff">RdvMedecins-SqlServer-02</span><span style="color: #000000">] 项目的方法创建该项目的 DLL，并将所有项目 DLL 集中到 [</span><span style="color: #0000ff">RdvMedecins-Firebird-02</span><span style="color: #000000">] 中创建的 [lib] 文件夹中。这些将作为后续 [</span><span style="color: #0000ff">RdvMedecins-Firebird-03</span><span style="color: #000000">] Web 项目的引用。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DA000000D5F852DD2B.png" width="153" height="149" style="display:inline-block; margin:4px;width:4.039cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DA000000D5F852DD2B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">第7行引用了项目[RdvMedecins-SqlServer-02]的程序集。该程序集现已更新为[RdvMedecins-Firebird-02]。</span></p>
+<p><span style="color: #000000">完成上述操作后，我们已准备好执行 [DAO] 层的测试。在此之前，需先确保填充好基础数据（即 [RdvMedecins-Firebird-01] 项目中的 [Fill] 程序）。测试程序通过。</span></p>
+<p><span style="color: #000000">我们按照之前处理项目[RdvMedecins-SqlServer-02]的方法创建该项目中的DLL，并将项目中所有 DLL 程序，将其归入在 [RdvMedecins-Firebird-02] 中创建的 [lib] 文件夹中。这些将作为后续 Web 项目 [RdvMedecins-Firebird-03] 的参考。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000DA000000D5F852DD2B.png" width="153" height="149" style="display:inline-block; margin:4px;width:4.039cm;height:3.941cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DA000000D5F852DD2B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">现在，我们准备开始构建应用程序的 [ASP.NET] 层：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005DB000001252F581312.png" width="680" height="133" style="display:inline-block; margin:4px;width:17.999cm;height:3.517cm;" class="odt-zoomable" data-zoom-src="images/10000000000005DB000001252F581312.png" /></td></tr></table>
+<p><span style="color: #000000">现在，我们已准备好构建应用程序的 [ASP.NET] 层：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005DB000001252F581312.png" width="680" height="133" style="display:inline-block; margin:4px;width:17.999cm;height:3.517cm;" class="odt-zoomable" data-zoom-src="images/10000000000005DB000001252F581312.png" /></td></tr></table>
 
-<p><span style="color: #000000">我们将从 [RdvMedecins-SqlServer-03] 项目开始。我们将把此项目文件夹复制为 [RdvMedecins-Firebird-03] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005BD000002CF57C5F3F6.png" width="680" height="333" style="display:inline-block; margin:4px;width:17.999cm;height:8.811cm;" class="odt-zoomable" data-zoom-src="images/10000000000005BD000002CF57C5F3F6.png" /></td></tr></table>
+<p><span style="color: #000000">我们将以项目 [RdvMedecins-SqlServer-03] 为基础。我们将该项目的文件夹复制到 [RdvMedecins-Firebird-03] 和 [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005BD000002CF57C5F3F6.png" width="680" height="333" style="display:inline-block; margin:4px;width:17.999cm;height:8.809cm;" class="odt-zoomable" data-zoom-src="images/10000000000005BD000002CF57C5F3F6.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [2] 中，使用 VS 2012 Express for the Web，我们打开 [RdvMedecins-Firebird-03] 文件夹中的解决方案；</span></li>
-<li><span style="color: #000000">在 [3] 中，我们将解决方案名称和项目名称均进行修改；</span></li>
+<li><span style="color: #000000">在 [3] 中，我们将解决方案名称和项目名称进行修改；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000061C00000187D37548BA.png" width="680" height="170" style="display:inline-block; margin:4px;width:17.999cm;height:4.5cm;" class="odt-zoomable" data-zoom-src="images/100000000000061C00000187D37548BA.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000061C00000187D37548BA.png" width="680" height="170" style="display:inline-block; margin:4px;width:17.999cm;height:4.5cm;" class="odt-zoomable" data-zoom-src="images/100000000000061C00000187D37548BA.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [4] 中，查看项目当前的引用；</span></li>
-<li><span style="color: #000000">在 [5] 中，我们将其删除；</span></li>
-<li><span style="color: #000000">在 [6] 中，用我们刚刚存储在 [RdvMedecins-Firebird-02] 项目内 [lib] 文件夹中的 DLL 引用替换它们。</span></li>
+<li><span style="color: #000000">在 [4] 中，当前项目的引用；</span></li>
+<li><span style="color: #000000">在 [5] 中，将其删除；</span></li>
+<li><span style="color: #000000">并将其替换为对 DLL 的引用，该文件我们刚刚存储在项目 [RdvMedecins-Firebird-02] 的文件夹 [lib] 中。</span></li>
 </ul>
-<p><span style="color: #000000">剩下的就是修改 [Web.config] 文件。我们将该文件的当前内容替换为 [RdvMedecins-Firebird-02] 项目中 [App.config] 文件的内容。完成此操作后，运行 Web 项目。它运行正常。请记住，在运行 Web 应用程序之前，先向数据库中插入数据。</span></p>
+<p><span style="color: #000000">接下来只需修改文件 [Web.config]，将其当前内容替换为项目 [RdvMedecins-Firebird-02] 中文件 [App.config] 的内容。完成上述操作后，运行 Web 项目。项目运行正常。 请务必在运行Web应用程序前先填充数据库。</span></p>
 
 
 

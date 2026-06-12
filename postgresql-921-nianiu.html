@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -330,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="-ienianiu.html" class="md-nav__link">
+      <a href="-nianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.  ：一个案例研究
+    2.  案例研究
   
 
     
@@ -384,14 +386,14 @@
   
   
     <li class="md-nav__item">
-      <a href="mysql-5528-nianiu.html" class="md-nav__link">
+      <a href="iu-mysql-5528-enianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. MySQL 5.5.28 案例研究
+    4. 基于 MySQL 5.5.28 的案例研究
   
 
     
@@ -501,7 +503,7 @@
   <a href="#61" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.1. 安装工具
+        6.1. 工具安装
       
     </span>
   </a>
@@ -523,7 +525,7 @@
   <a href="#63-ef-5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.3. 基于 EF 5 的多层架构
+        6.3. 基于 EF 的多层架构 5
       
     </span>
   </a>
@@ -612,78 +614,78 @@
   
 
 
-<p><a id="refheading39815804107930"></a></p>
+<p><span id="refheading39815804107930" name="refheading39815804107930" class="odt-bookmark-anchor"></span></p>
 <h1 id="6-postgresql-921">6. <span style="color: #365f91">PostgreSQL 9.2.1 案例研究</span></h1>
-<p><a id="refheading39817804107930"></a></p>
-<h2 id="61">6.1. <span style="color: #4f81bd">安装工具</span></h2>
+<p><span id="refheading39817804107930" name="refheading39817804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="61">6.1. <span style="color: #4f81bd">工具安装</span></h2>
 <p><span style="color: #000000">需要安装的工具如下：</span></p>
 <ul>
-<li>数据库管理系统（DBMS）：[http://www.enterprisedb.com/products-services-training/pgdownload#windows]；</li>
-<li>管理工具：EMS SQL Manager for PostgreSQL 免费版 [http://www.sqlmanager.net/fr/products/postgresql/manager/download]。</li>
+<li>SGBD：[http://www.enterprisedb.com/products-services-training/pgdownload#windows]；</li>
+<li>一个管理工具：EMS SQL Manager for PostgreSQL Freeware [http://www.sqlmanager.net/fr/products/postgresql/manager/download]。</li>
 </ul>
 <p><span style="color: #000000">在下面的示例中，用户 </span><strong><span style="color: #000000">postgres </span></strong><span style="color: #000000">的密码为 </span><strong><span style="color: #000000">postgres</span></strong><span style="color: #000000">。</span></p>
-<p><span style="color: #000000">让我们先启动 PostgreSQL，然后启动 [SQL Manager Lite for PostgreSQL] 工具，我们将使用该工具来管理数据库管理系统。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000543000001760A1DE264.png" width="674" height="187" style="display:inline-block; margin:4px;width:17.821cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/1000000000000543000001760A1DE264.png" /></td></tr></table>
+<p><span style="color: #000000">先运行 PostgreSQL，然后运行 [SQL Manager Lite for PostgreSQL] 工具，用它来管理 SGBD。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000543000001760A1DE264.png" width="674" height="187" style="display:inline-block; margin:4px;width:17.821cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/1000000000000543000001760A1DE264.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[1]中，我们通过Windows服务启动PostgreSQL数据库管理系统；</span></li>
-<li><span style="color: #000000">在 [2] 中，服务已启动；</span></li>
+<li><span style="color: #000000">在 [1] 中，我们通过 Windows 服务启动 SGBD 和 PostgreSQL；</span></li>
+<li><span style="color: #000000">在 [2] 阶段，服务已启动；</span></li>
 </ul>
-<p><span style="color: #000000">现在我们启动 [SQL Manager Lite for MySQL] 工具，我们将使用它来管理该数据库管理系统 [3]。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005F9000001C516CF5C64.png" width="680" height="202" style="display:inline-block; margin:4px;width:17.999cm;height:5.332cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F9000001C516CF5C64.png" /></td></tr></table>
+<p><span style="color: #000000">现在我们启动工具 [SQL Manager Lite for MySQL]，用于管理 SGBD 和 [3]。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005F9000001C516CF5C64.png" width="680" height="202" style="display:inline-block; margin:4px;width:17.999cm;height:5.332cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F9000001C516CF5C64.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[4]中，我们创建一个新数据库；</span></li>
-<li><span style="color: #000000">在[5]中，我们指定了数据库名称；</span></li>
+<li><span style="color: #000000">在 [4] 中，我们创建一个新数据库；</span></li>
+<li><span style="color: #000000">在 [5] 中，指定数据库名称；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FC0000026B7FF37AAE.png" width="680" height="275" style="display:inline-block; margin:4px;width:17.999cm;height:7.273cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FC0000026B7FF37AAE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005FC0000026B7FF37AAE.png" width="680" height="275" style="display:inline-block; margin:4px;width:17.999cm;height:7.273cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FC0000026B7FF37AAE.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [5] 中，我们以 postgres / postgres 身份登录；</span></li>
-<li><span style="color: #000000">在[6]中，我们提供了一些信息；</span></li>
-<li><span style="color: #000000">在[7]中，我们对待执行的SQL语句进行了验证；</span></li>
+<li><span style="color: #000000">在 [5] 中，以 postgres / postgres 身份登录；</span></li>
+<li><span style="color: #000000">在 [6] 中，输入一些信息；</span></li>
+<li><span style="color: #000000">在 [7] 中，确认即将执行的 SQL 命令；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062B000002BE2EE8ECB3.png" width="680" height="302" style="display:inline-block; margin:4px;width:17.999cm;height:8.003cm;" class="odt-zoomable" data-zoom-src="images/100000000000062B000002BE2EE8ECB3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000062B000002BE2EE8ECB3.png" width="680" height="302" style="display:inline-block; margin:4px;width:17.999cm;height:8.001cm;" class="odt-zoomable" data-zoom-src="images/100000000000062B000002BE2EE8ECB3.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [8] 中，数据库已创建。现在必须将其注册到 [EMS Manager] 中。信息正确。点击 [确定]；</span></li>
-<li><span style="color: #000000">在[9]中，连接到该数据库；</span></li>
-<li><span style="color: #000000">在[10]中，[EMS Manager]显示了该数据库，目前该数据库为空。请注意，表将属于名为 </span><strong>public</strong><span style="color: #000000"> 的模式 [11]。</span></li>
+<li><span style="color: #000000">在 [8] 中，数据库已创建。现在必须在 [EMS Manager] 中将其注册。信息正确。执行 [OK]；</span></li>
+<li><span style="color: #000000">在 [9] 中，我们连接到该数据库；</span></li>
+<li><span style="color: #000000">在 [10] 中，[EMS Manager] 显示了该数据库，目前为空。请注意，表将属于一个名为 </span><strong>public</strong> <span style="color: #000000">[11] 的模式。</span></li>
 </ul>
-<p><span style="color: #000000">接下来，我们将一个 VS 2012 项目连接到此数据库。</span></p>
-<p><a id="refheading39819804107930"></a></p>
+<p><span style="color: #000000">现在我们将一个名为 VS 2012 的项目连接到该数据库。</span></p>
+<p><span id="refheading39819804107930" name="refheading39819804107930" class="odt-bookmark-anchor"></span></p>
 <h2 id="62">6.2. <span style="color: #4f81bd">基于实体创建数据库</span></h2>
-<p><span style="color: #000000">首先，将 [RdvMedecins-SqlServer-01] 项目文件夹复制为 [RdvMedecins-PostgreSQL-01] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D50000031AEFE46C95.png" width="680" height="362" style="display:inline-block; margin:4px;width:17.999cm;height:9.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D50000031AEFE46C95.png" /></td></tr></table>
+<p><span style="color: #000000">首先，我们将项目 [RdvMedecins-SqlServer-01] 的文件夹复制到 [RdvMedecins-PostgreSQL-01] 和 [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005D50000031AEFE46C95.png" width="680" height="362" style="display:inline-block; margin:4px;width:17.999cm;height:9.571cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D50000031AEFE46C95.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [2] 中，在 VS 2012 中，我们将 [RdvMedecins-SqlServer-01] 项目从解决方案中移除；</span></li>
+<li><span style="color: #000000">在 [2] 中，在 VS 2012 中，我们将项目 [RdvMedecins-SqlServer-01] 从解决方案中删除；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006100000027462DF8913.png" width="680" height="275" style="display:inline-block; margin:4px;width:17.999cm;height:7.283cm;" class="odt-zoomable" data-zoom-src="images/10000000000006100000027462DF8913.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006100000027462DF8913.png" width="680" height="275" style="display:inline-block; margin:4px;width:17.999cm;height:7.281cm;" class="odt-zoomable" data-zoom-src="images/10000000000006100000027462DF8913.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [3] 中，该项目已被移除；</span></li>
-<li><span style="color: #000000">在 [4] 中，我们添加了另一个项目。该项目取自我们之前创建的 [RdvMedecins-PostgreSQL-01] 文件夹；</span></li>
+<li><span style="color: #000000">在 [3] 中，该项目已被删除；</span></li>
+<li><span style="color: #000000">在 [4] 中，我们添加了另一个项目。该项目位于我们之前创建的 [RdvMedecins-PostgreSQL-01] 文件夹中；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000032300000118117E153F.png" width="402" height="140" style="display:inline-block; margin:4px;width:10.624cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/100000000000032300000118117E153F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000032300000118117E153F.png" width="402" height="140" style="display:inline-block; margin:4px;width:10.624cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/100000000000032300000118117E153F.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [5] 中，加载的项目名为 [RdvMedecins-SqlServer-01]；</span></li>
-<li><span style="color: #000000">在 [6] 中，我们将它重命名为 [RdvMedecins-PostgreSQL-01]；</span></li>
+<li><span style="color: #000000">将其从 [6] 重命名为 [RdvMedecins-PostgreSQL-01]；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062700000248DC41548B.png" width="680" height="252" style="display:inline-block; margin:4px;width:17.999cm;height:6.675cm;" class="odt-zoomable" data-zoom-src="images/100000000000062700000248DC41548B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000062700000248DC41548B.png" width="680" height="252" style="display:inline-block; margin:4px;width:17.999cm;height:6.673cm;" class="odt-zoomable" data-zoom-src="images/100000000000062700000248DC41548B.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [7] 中，我们将另一个项目添加到解决方案中。该项目取自先前从解决方案中移除的项目的 [RdvMedecins-SqlServer-01] 文件夹；</span></li>
-<li><span style="color: #000000">在 [8] 中，[RdvMedecins-SqlServer-01] 项目已重新添加到解决方案中。</span></li>
+<li><span style="color: #000000">在 [7] 中，向解决方案中添加了另一个项目。该项目位于我们之前从解决方案中删除的 [RdvMedecins-SqlServer-01] 项目文件夹中；</span></li>
+<li><span style="color: #000000">在 [8] 中，项目 [RdvMedecins-SqlServer-01] 已重新加入到解决方案中。</span></li>
 </ul>
-<p><span style="color: #000000">[RdvMedecins-PostgreSQL-01] 项目与 [RdvMedecins-SqlServer-01] 项目完全相同。我们需要进行一些修改。在 [App.config] 中，我们将修改连接字符串和 [DbProviderFactory]，这些内容必须根据不同的数据库管理系统（DBMS）进行适配。</span></p>
+<p><span style="color: #000000">项目 [RdvMedecins-PostgreSQL-01] 与项目 [RdvMedecins-SqlServer-01] 完全相同。我们需要进行一些修改。 在 [App.config] 中，我们将修改连接字符串，并需将 [DbProviderFactory] 适配至每个 SGBD。</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- connection chain on base --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- 数据库连接字符串 --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">monContexte</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">connectionString</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Server=127.0.0.1;Port=5432;Database=rdvmedecins-ef;User Id=postgres;Password=postgres;</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">providerName</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Npgsql</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- the factory provider --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- 工厂提供者 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.data</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">DbProviderFactories</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Npgsql Data Provider</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">invariant</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Npgsql</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">support</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">FF</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">description</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">.Net Framework Data Provider for Postgresql Server</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Npgsql.NpgsqlFactory, Npgsql, Version=2.0.11.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
@@ -692,50 +694,50 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">第 3 行：用户名和密码；</span></li>
-<li><span style="color: #000000">第 7–9 行：</span><em>DbProviderFactory</em><span style="color: #000000">。第 8 行引用了一个我们没有的 DLL [</span><span style="color: #0000ff">Npgsql</span><span style="color: #000000">]。我们可以使用 NuGet [1] 获取它：</span></li>
+<li><span style="color: #000000">第 3 行：用户名及其密码；</span></li>
+<li><span style="color: #000000">第7-9行：</span><em>DbProviderFactory</em><span style="color: #000000">。第8行引用了DLL和[Npgsql]，但我们没有这两个文件。 可通过 NuGet [1] 获取：</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062C00000277F7E13816.png" width="680" height="272" style="display:inline-block; margin:4px;width:17.999cm;height:7.188cm;" class="odt-zoomable" data-zoom-src="images/100000000000062C00000277F7E13816.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000062C00000277F7E13816.png" width="680" height="272" style="display:inline-block; margin:4px;width:17.999cm;height:7.188cm;" class="odt-zoomable" data-zoom-src="images/100000000000062C00000277F7E13816.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [2] 中，在搜索框中输入关键词 </span><em>postgresql</em><span style="color: #000000">；</span></li>
-<li><span style="color: #000000">在 [3] 中，选择 [Npgsql] 包。这是一个用于 PostgreSQL 的 ADO.NET 连接器；</span></li>
+<li><span style="color: #000000">在 [3] 中，选择软件包 [Npgsql]。这是一个用于 PostgreSQL 的连接器 ADO.NET；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003EA000002974545F6D0.png" width="501" height="332" style="display:inline-block; margin:4px;width:13.256cm;height:8.772cm;" class="odt-zoomable" data-zoom-src="images/10000000000003EA000002974545F6D0.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003EA000002974545F6D0.png" width="501" height="332" style="display:inline-block; margin:4px;width:13.256cm;height:8.772cm;" class="odt-zoomable" data-zoom-src="images/10000000000003EA000002974545F6D0.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [4] 中，已添加两个引用；</span></li>
-<li><span style="color: #000000">在 [5] 中，位于 [App.config] 文件内，您必须指定 DLL 的正确版本。您可以在其属性中找到该版本信息。</span></li>
+<li><span style="color: #000000">在 [4] 中，已添加两个参考；</span></li>
+<li><span style="color: #000000">在 [5] 中，对于 [App.config]，需填写 DLL 的正确版本。该版本可在其属性中找到。</span></li>
 </ul>
-<p><span style="color: #000000">在 [Entities.cs] 文件中，您需要调整将要生成的表的架构：</span></p>
+<p><span style="color: #000000">在文件 [Entites.cs] 中，需调整即将生成的表的结构：</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;MEDECINS&quot;</span>, Schema = <span style="color:#a31515">&quot;public&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Medecin</span><span style="color:#000000"> : </span><span style="color:#2b91af">Personne</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;CLIENTS&quot;</span>, Schema = <span style="color:#a31515">&quot;public&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Client</span><span style="color:#000000"> : </span><span style="color:#2b91af">Personne</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;CRENEAUX&quot;</span>, Schema = <span style="color:#a31515">&quot;public&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Creneau</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">Table</span>(<span style="color:#a31515">&quot;RVS&quot;</span>, Schema = <span style="color:#a31515">&quot;public&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">Rv</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {...}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">我们在之前创建 PostgreSQL 数据库时看到，这些表属于一个名为 </span><strong>public</strong><span style="color: #000000"> 的模式。</span></p>
+<p><span style="color: #000000">我们在之前创建数据库 PostgreSQL 时看到，这些表属于一个名为 </span><strong>public</strong><span style="color: #000000"> 的模式。</span></p>
 <p><span style="color: #000000">我们配置项目的执行：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000034600000124152767A9.png" width="419" height="146" style="display:inline-block; margin:4px;width:11.086cm;height:3.863cm;" class="odt-zoomable" data-zoom-src="images/100000000000034600000124152767A9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000034600000124152767A9.png" width="419" height="146" style="display:inline-block; margin:4px;width:11.086cm;height:3.863cm;" class="odt-zoomable" data-zoom-src="images/100000000000034600000124152767A9.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[1]中，我们为将要生成的程序集指定了一个不同的名称；</span></li>
-<li><span style="color: #000000">在 [2] 中，我们还指定了一个不同的默认命名空间；</span></li>
-<li><span style="color: #000000">在 [3] 中，我们指定了要执行的程序。</span></li>
+<li><span style="color: #000000">在 [1] 中，为即将生成的程序集指定了另一个名称；</span></li>
+<li><span style="color: #000000">在 [2] 中，同时指定另一个默认命名空间；</span></li>
+<li><span style="color: #000000">在 [3] 中，指定要执行的程序。</span></li>
 </ul>
-<p><span style="color: #000000">在此阶段，没有编译错误。让我们运行 [CreateDB_01] 程序。我们得到以下异常：</span></p>
+<p><span style="color: #000000">至此，编译未出现错误。运行程序 [CreateDB_01]。会得到以下异常：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -756,22 +758,22 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>   à RdvMedecins_01.CreateDB_01.Main(String[] args) dans d:\data\istia-1213\c#\d
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>vp\Entity Framework\RdvMedecins\RdvMedecins-Oracle-01\CreateDB_01.cs:ligne 15
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">我们记得在 MySQL 和 Oracle 中都遇到过相同的错误。这与实体中 </span><em><span style="color: #000000">Timestamp</span></em><span style="color: #000000"> 字段的类型有关。我们进行与 Oracle 相同的修改。在实体中，我们将以下三行代码替换为</span></p>
+<p><span style="color: #000000">我们记得在 MySQL 和 Oracle 环境中也遇到过相同的错误。这与实体中字段 </span><em><span style="color: #000000">Timestamp</span></em><span style="color: #000000"> 的类型有关。我们进行与 Oracle 环境相同的修改。在实体中，我们将以下三行</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Column</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;TIMESTAMP&quot;</span><span style="color:#000000">)]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Timestamp</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#0000ff">byte</span><span style="color:#000000">[] Timestamp { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000"> 如下所示：</span></p>
+<p><span style="color: #000000"> 替换为以下内容：</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">ConcurrencyCheck</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    [</span><span style="color:#2b91af">Column</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;VERSIONING&quot;</span><span style="color:#000000">)]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">int</span><span style="color:#000000">? Versioning { </span><span style="color:#0000ff">get</span><span style="color:#000000">; </span><span style="color:#0000ff">set</span><span style="color:#000000">; }</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">我们将该列的类型从 </span><strong><span style="color: #000000">byte[]</span></strong><span style="color: #000000"> 更改为 </span><strong><span style="color: #000000">int?</span></strong><span style="color: #000000">。在数据库管理系统中，我们将使用存储过程，在每次插入或修改行时将该整数递增 1。</span></p>
-<p><span style="color: #000000">我们将上述更改应用到所有四个实体，然后重新运行应用程序。随后我们收到以下错误：</span></p>
+<p><span style="color: #000000">我们将该列的类型从 </span><strong><span style="color: #000000">byte[]</span></strong><span style="color: #000000"> 更改为 </span><strong><span style="color: #000000">int?</span></strong><span style="color: #000000">。在 SGBD 中，我们将使用存储过程，在每次插入或修改行时将该整数递增 1。</span></p>
+<p><span style="color: #000000">对四个实体进行上述修改后，重新运行应用程序。此时会出现以下错误：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -784,43 +786,43 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="sb">   à RdvMedecins_01.CreateDB_01.Main(String[] args) dans d:\data\istia-1213\c#\d</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="sb">vp\Entity Framework\RdvMedecins\RdvMedecins-Oracle-01\CreateDB_01.cs:ligne 15</span>
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">第 1 行表明 PostgreSQL ADO.NET 连接器无法删除现有数据库。这与 Oracle 的情况类似。因此，我们需要使用 [EMS Manager for PostgreSQL] 工具手动创建 [RDVMEDECINS-EF] 数据库。本文不会详细描述每个步骤，仅介绍最重要的步骤。</span></p>
+<p><span style="color: #000000">第 1 行指出，PostgreSQL 的连接器 ADO.NET 无法删除现有数据库。 这与 Oracle 的情况完全相同。因此，我们需要使用工具 [EMS Manager for PostgreSQL] 手动构建数据库 [RDVMEDECINS-EF]。本文不详述所有步骤，仅介绍最重要的部分。</span></p>
 <p><span style="color: #000000">PostgreSQL 数据库结构如下：</span></p>
-<p><u><strong><span style="color: #000000">表结构</span></strong></u></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055300000194A4F22C8F.png" width="681" height="202" style="display:inline-block; margin:4px;width:18.03cm;height:5.345cm;" class="odt-zoomable" data-zoom-src="images/100000000000055300000194A4F22C8F.png" /></td></tr></table>
+<p><u><strong><span style="color: #000000">表</span></strong></u></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000055300000194A4F22C8F.png" width="681" height="202" style="display:inline-block; margin:4px;width:18.03cm;height:5.339cm;" class="odt-zoomable" data-zoom-src="images/100000000000055300000194A4F22C8F.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[1]中，ID 是一个类型为 </span><em>serial</em><span style="color: #000000"> 的主键。这种 PostgreSQL 类型是由数据库管理系统自动生成的整数。</span></li>
+<li><span style="color: #000000">在 [1] 中，ID 是类型为 </span><em>serial</em><span style="color: #000000"> 的主键。该类型 PostgreSQL 是由 SGBD 自动生成的整数。</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051B00000187C8CE44E3.png" width="654" height="196" style="display:inline-block; margin:4px;width:17.291cm;height:5.173cm;" class="odt-zoomable" data-zoom-src="images/100000000000051B00000187C8CE44E3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000051B00000187C8CE44E3.png" width="654" height="196" style="display:inline-block; margin:4px;width:17.291cm;height:5.173cm;" class="odt-zoomable" data-zoom-src="images/100000000000051B00000187C8CE44E3.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052A00000187AADB34D7.png" width="661" height="196" style="display:inline-block; margin:4px;width:17.489cm;height:5.173cm;" class="odt-zoomable" data-zoom-src="images/100000000000052A00000187AADB34D7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000052A00000187AADB34D7.png" width="661" height="196" style="display:inline-block; margin:4px;width:17.489cm;height:5.173cm;" class="odt-zoomable" data-zoom-src="images/100000000000052A00000187AADB34D7.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000512000001AA9CF42D51.png" width="649" height="213" style="display:inline-block; margin:4px;width:17.171cm;height:5.636cm;" class="odt-zoomable" data-zoom-src="images/1000000000000512000001AA9CF42D51.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000512000001AA9CF42D51.png" width="649" height="213" style="display:inline-block; margin:4px;width:17.171cm;height:5.636cm;" class="odt-zoomable" data-zoom-src="images/1000000000000512000001AA9CF42D51.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B1000001508A641D14.png" width="601" height="168" style="display:inline-block; margin:4px;width:15.889cm;height:4.445cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B1000001508A641D14.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004B1000001508A641D14.png" width="601" height="168" style="display:inline-block; margin:4px;width:15.889cm;height:4.445cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B1000001508A641D14.png" /></td></tr></table>
 
-<p><span style="color: #000000">这些表拥有与前几个示例中相同的表的主键和外键。这些外键具有 ON DELETE CASCADE 属性。</span></p>
+<p><span style="color: #000000">各个表拥有与前面的示例中相同的表的主键和外键。外键具有属性 ON DELETE CASCADE。</span></p>
 <p><u><strong><span style="color: #000000">序列</span></strong></u></p>
-<p><span style="color: #000000">与 Oracle 一样，我们在这里也创建了序列。这些是生成连续数字的生成器。共有 5 个 [1]。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005130000015F9201D879.png" width="650" height="176" style="display:inline-block; margin:4px;width:17.186cm;height:4.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000005130000015F9201D879.png" /></td></tr></table>
+<p><span style="color: #000000">与 Oracle 类似，我们在此创建了序列。它们是连续数字的生成器。共有 5 个：[1]。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005130000015F9201D879.png" width="650" height="176" style="display:inline-block; margin:4px;width:17.186cm;height:4.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000005130000015F9201D879.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[2]中，我们可以看到[CLIENTS_ID_SEQ]序列的属性。它生成以1为增量、从1开始直至一个非常大的值的连续数字。</span></li>
+<li><span style="color: #000000">在 [2] 中，我们可以看到序列 [CLIENTS_ID_SEQ] 的属性。它生成从 1 开始、以 1 为增量、直至非常大值的连续数字。</span></li>
 </ul>
-<p><span style="color: #000000">所有序列均基于相同的模型构建。 </span></p>
+<p><span style="color: #000000">所有序列均基于相同的模式构建。 </span></p>
 <ul>
-<li><span style="color: #000000">[CLIENTS_ID_seq] 将用于生成 [CLIENTS] 表的主键；</span></li>
-<li><span style="color: #000000">[MEDECINS_ID_seq] 将用于生成 [MEDECINS] 表的主键；</span></li>
-<li><span style="color: #000000">[SLOTS_ID_seq] 将用于生成 [SLOTS] 表的主键；</span></li>
-<li><span style="color: #000000">[RVS_ID_seq] 将用于生成 [RVS] 表的主键；</span></li>
+<li><span style="color: #000000">[CLIENTS_ID_seq] 将用于生成表 [CLIENTS] 的主键；</span></li>
+<li><span style="color: #000000">[MEDECINS_ID_seq] 将用于生成表 [MEDECINS] 的主键；</span></li>
+<li><span style="color: #000000">[CRENEAUX_ID_seq] 将用于生成表 [CRENEAUX] 的主键；</span></li>
+<li><span style="color: #000000">[RVS_ID_seq] 将用于生成表 [RVS] 的主键；</span></li>
 <li><span style="color: #000000">[sequence_versions] 将用于生成所有表中 [VERSIONING] 列的值。</span></li>
 </ul>
 <p><u><strong><span style="color: #000000">触发器</span></strong></u></p>
-<p><span style="color: #000000">触发器是数据库管理系统（DBMS）在表中发生某个事件（插入、更新、删除）之前或之后执行的存储过程。我们共有 4 个触发器 [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D1000000BEF0605232.png" width="617" height="95" style="display:inline-block; margin:4px;width:16.312cm;height:2.514cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D1000000BEF0605232.png" /></td></tr></table>
+<p><span style="color: #000000">触发器是由 SGBD 在表中发生某项事件（插入、修改、删除）之前或之后执行的存储过程。我们有 4 个 [1]：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004D1000000BEF0605232.png" width="617" height="95" style="display:inline-block; margin:4px;width:16.312cm;height:2.514cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D1000000BEF0605232.png" /></td></tr></table>
 
-<p><span style="color: #000000">让我们来看一下 [CLIENTS_tr] 触发器的 DDL 代码，该触发器用于填充 [CLIENTS] 表的 [VERSIONING] 列：</span></p>
+<p><span style="color: #000000">让我们查看触发器 [CLIENTS_tr] 的代码 DDL，该触发器为表 [CLIENTS] 的列 [VERSIONING] 提供数据：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -830,10 +832,10 @@
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">EXECUTE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="k">public</span><span class="p">.</span><span class="n">trigger_versions</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">第 1-3 行：在 [CLIENTS] 表上的每次 INSERT 或 UPDATE 操作之前；</span></li>
+<li><span style="color: #000000">第 1-3 行：在表 [CLIENTS] 上执行每次 INSERT 或 UPDATE 操作之前；</span></li>
 <li><span style="color: #000000">第 4 行：执行过程 [public.trigger_versions()]。</span></li>
 </ul>
-<p><span style="color: #000000">过程 [public.trigger_versions()] 如下所示：</span></p>
+<p><span style="color: #000000">过程 [public.trigger_versions()] 如下：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -843,85 +845,85 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a>END
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">第 2 行：NEW 代表即将被插入或修改的行。NEW. &quot;VERSIONING&quot; 是该行的 [VERSIONING] 列。该列被赋予 &quot;sequence_versions&quot; 序列生成器生成的下一个值。因此，每当对 [CLIENTS] 表执行 INSERT 或 UPDATE 操作时，[&quot;VERSIONING&quot;] 列的值就会发生变化。</span></li>
+<li><span style="color: #000000">第2行：NEW 表示即将插入或修改的行。NEW。“VERSIONING”是该行的[VERSIONING]列。 为其分配数字生成器的下一个值“sequence_versions”。 因此，每当在表 [CLIENTS] 上执行 INSERT / UPDATE 操作时，列 [&quot;VERSIONING&quot;] 就会发生变化。</span></li>
 </ul>
-<p><span style="color: #000000">触发器 [MEDECINS_tr, CRENEAUX_tr, RVS_tr] 的工作原理相同。这四个 [&quot;VERSIONING&quot;] 列的值均来自同一个序列。</span></p>
-<p><span style="color: #000000">用于在 PostgreSQL 数据库 [RDVMEDECINS-EF] 中生成表的脚本已放置在 [RdvMedecins / databases / postgreSQL] 文件夹中。读者可以加载并运行该脚本以创建表。</span></p>
-<p><span style="color: #000000">完成此操作后，即可运行项目中的各项程序。这些程序生成的结果与 SQL Server 环境下的结果相同，但 [ModifyDetachedEntities] 程序除外——该程序会因与 Oracle 环境相同的理由而崩溃。解决此问题的方法与 Oracle 环境相同。 只需将 [RdvMedecins-Oracle-01] 项目中的 [ModifyDetachedEntities] 程序复制到 [RdvMedecins-PostgreSQL-01] 项目中即可。</span></p>
-<p><span style="color: #000000">[LazyEagerLoading] 程序会因以下异常而崩溃：</span></p>
+<p><span style="color: #000000">触发器 [MEDECINS_tr, CRENEAUX_tr, RVS_tr] 的工作原理与此类似。四个 [&quot;VERSIONING&quot;] 列的值均来自同一序列。</span></p>
+<p><span style="color: #000000">用于生成数据库表的脚本 PostgreSQL 和 [RDVMEDECINS-EF] 已放置在文件夹 [RdvMedecins / databases / postgreSQL] 中。读者可加载并执行该脚本以创建表。</span></p>
+<p><span style="color: #000000">完成上述操作后，即可运行项目中的各个程序。它们产生的结果与 SQL Server 相同，但 [ModifyDetachedEntities] 程序除外——该程序会因与在 Oracle 环境中相同的理由而崩溃。解决该问题的方法与之前相同。 只需将 [RdvMedecins-Oracle-01] 项目中的 [ModifyDetachedEntities] 程序复制到 [RdvMedecins-PostgreSQL-01] 项目中即可。</span></p>
+<p><span style="color: #000000">程序 [LazyEagerLoading] 因以下异常而崩溃：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>Exception non gérée : System.Data.EntityCommandExecutionException: Une erreur s&#39;est produite lors de l&#39;exécution de la définition de la commande. Pour plus de détails, consultez l&#39;exception interne. ---&gt; Npgsql.NpgsqlException: ERREUR: 42601: erreur de syntaxe sur ou près de « LEFT »
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>   à Npgsql.NpgsqlState.&lt;ProcessBackendResponses_Ver_3&gt;d__a.MoveNext()
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a>   ...
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>   à RdvMedecins_01.LazyEagerLoading.Main(String[] args) dans d:\data\istia-1213\c#\dvp\Entity Framework\RdvMedecins\RdvMedecins-PostgreSQL-01\LazyEagerLoading.cs:ligne 23
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>   à RdvMedecins_01.LazyEagerLoading.Main(String[] args) dans d:\data\istia-1213\c#\dvp\Entity Framework\RdvMedecins\RdvMedecins-PostgreSQL-01\LazyEagerLoading.cs:第 23 行
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">错误的代码如下：</span></p>
+<p><span style="color: #000000">错误代码如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">using</span> (<span style="color:#0000ff">var</span> context = <span style="color:#0000ff">new</span> <span style="color:#2b91af">RdvMedecinsContext</span>())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// crenel n° 0</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 时段编号 0</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        creneau = context.Creneaux.Include(</span><span style="color:#a31515">&quot;Medecin&quot;</span><span style="color:#000000">).Single&lt;</span><span style="color:#2b91af">Creneau</span><span style="color:#000000">&gt;(c =&gt; c.Id == idCreneau);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#2b91af">Console</span><span style="color:#000000">.WriteLine(creneau.ShortIdentity());</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">异常的第 1 行：报告的错误提示了连接操作，因为 LEFT 是连接关键字。由于上述代码的第 4 行要求立即加载 [Appointment] 实体的 [Doctor] 依赖项，EF 在 [APPOINTMENTS] 和 [DOCTORS] 表之间执行了连接操作。然而，似乎 ADO.NET 连接器生成了一个错误的 SQL 语句。我们将代码重写如下：</span></p>
+<p><span style="color: #000000">从异常的第 1 行来看，报告的错误似乎与连接操作有关，因为 LEFT 是连接操作的关键字。 由于上述代码的第 4 行要求立即加载实体 [Creneau] 的依赖项 [Medecin]， EF 对表 [CRENEAUX] 和 [MEDECINS] 进行了连接。 但似乎连接器 ADO.NET 生成了一个错误的 SQL 命令。我们将代码重写如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">using</span> (<span style="color:#0000ff">var</span> context = <span style="color:#0000ff">new</span> <span style="color:#2b91af">RdvMedecinsContext</span>())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// crenel n° 0</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 时段编号 0</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        creneau = context.Creneaux.Find(idCreneau);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#2b91af">Console</span><span style="color:#000000">.WriteLine(creneau.ShortIdentity());</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// force the loading of the associated doctor</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// it&#x27;s possible because we&#x27;re still in an open context</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 强制加载关联医生</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 这是可能的，因为我们仍处于开放上下文中</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#2b91af">Medecin</span><span style="color:#000000"> medecin = creneau.Medecin;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">第 4 行：我们不通过 join 语句获取槽；</span></li>
-<li><span style="color: #000000">第8行：我们获取缺失的依赖关系。</span></li>
+<li><span style="color: #000000">第 4 行：检索无连接的时段；</span></li>
+<li><span style="color: #000000">第8行：获取缺失的依赖项。</span></li>
 </ul>
-<p><span style="color: #000000">这行得通。我们再次看到，更换数据库管理系统（DBMS）会对代码产生影响。实际上，这里的问题不在于数据库管理系统本身，而在于其 ADO.NET 连接器。</span></p>
-<p><a id="refheading39821804107930"></a></p>
-<h2 id="63-ef-5">6.3. <span style="color: #4f81bd">基于 EF 5 的多层架构</span></h2>
-<p><span style="color: #000000">让我们回到</span><a href="#etude-de-cas"><u><span style="color: #0563c1">第2段</span></u></a><span style="color: #000000">中描述的案例研究。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005ED0000012F13EEA291.png" width="680" height="136" style="display:inline-block; margin:4px;width:17.999cm;height:3.595cm;" class="odt-zoomable" data-zoom-src="images/10000000000005ED0000012F13EEA291.png" /></td></tr></table>
+<p><span style="color: #000000">运行成功。我们再次发现，SGBD的变更对代码产生了影响。实际上，问题并非出在SGBD本身，而是其连接器ADO.NET。</span></p>
+<p><span id="refheading39821804107930" name="refheading39821804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="63-ef-5">6.3. <span style="color: #4f81bd">基于 EF 的多层架构 5</span></h2>
+<p><span style="color: #000000">让我们回到第</span><a href="-nianiu.html#etude-de-cas"><u><span style="color: #0563c1"> 2</span></u></a><span style="color: #000000"> 段中描述的案例研究。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005ED0000012F13EEA291.png" width="680" height="136" style="display:inline-block; margin:4px;width:17.999cm;height:3.595cm;" class="odt-zoomable" data-zoom-src="images/10000000000005ED0000012F13EEA291.png" /></td></tr></table>
 
-<p><span style="color: #000000">我们将首先构建[DAO]数据访问层。为此，我们将VS 2012控制台项目[RdvMedecins-SqlServer-02]复制为[RdvMedecins-PostgreSQL-02] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005C00000030CC9D6021E.png" width="680" height="360" style="display:inline-block; margin:4px;width:17.999cm;height:9.537cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C00000030CC9D6021E.png" /></td></tr></table>
+<p><span style="color: #000000">我们将首先构建数据访问层 [DAO]。 为此，我们将控制台项目 VS 2012 [RdvMedecins-SqlServer-02] 复制到 [RdvMedecins-PostgreSQL-02] [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005C00000030CC9D6021E.png" width="680" height="360" style="display:inline-block; margin:4px;width:17.999cm;height:9.537cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C00000030CC9D6021E.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [2] 中，删除项目 [RdvMedecins-SqlServer-02]；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005DC00000213C38C1F3F.png" width="680" height="241" style="display:inline-block; margin:4px;width:17.999cm;height:6.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000005DC00000213C38C1F3F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005DC00000213C38C1F3F.png" width="680" height="241" style="display:inline-block; margin:4px;width:17.999cm;height:6.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000005DC00000213C38C1F3F.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [3] 中，将现有项目添加到解决方案中。从刚刚创建的 [RdvMedecins-PostgreSQL-02] 文件夹中选择该项目；</span></li>
-<li><span style="color: #000000">在 [4] 中，新项目的名称与被删除的项目相同。我们将更改其名称；</span></li>
+<li><span style="color: #000000">在 [3] 中，将现有项目添加到解决方案中。该项目取自刚刚创建的 [RdvMedecins-PostgreSQL-02] 文件夹；</span></li>
+<li><span style="color: #000000">在 [4] 中，新项目名称与被删除的项目相同。我们将更改其名称；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005730000015F1925C733.png" width="680" height="171" style="display:inline-block; margin:4px;width:17.999cm;height:4.53cm;" class="odt-zoomable" data-zoom-src="images/10000000000005730000015F1925C733.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005730000015F1925C733.png" width="680" height="171" style="display:inline-block; margin:4px;width:17.999cm;height:4.528cm;" class="odt-zoomable" data-zoom-src="images/10000000000005730000015F1925C733.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [5] 中，我们已更改了项目名称；</span></li>
-<li><span style="color: #000000">在 [6] 中，我们修改了部分属性，例如此处的装配体名称；</span></li>
-<li><span style="color: #000000">在 [7] 中，删除了 [Models] 文件夹，并用 [RdvMedecins-PostgreSQL-01] 项目中的 [Models] 文件夹替换。这是因为这两个项目共享相同的模型。</span></li>
+<li><span style="color: #000000">在 [6] 中，修改了其部分属性，例如此处的程序集名称；</span></li>
+<li><span style="color: #000000">更名为 [7]，删除文件夹 [Models]，并用项目 [RdvMedecins-PostgreSQL-01] 中的文件夹 [Models] 替换。因为这两个项目共享相同的模板。</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000030F000001509FAFD9EE.png" width="392" height="168" style="display:inline-block; margin:4px;width:10.359cm;height:4.445cm;" class="odt-zoomable" data-zoom-src="images/100000000000030F000001509FAFD9EE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000030F000001509FAFD9EE.png" width="392" height="168" style="display:inline-block; margin:4px;width:10.359cm;height:4.445cm;" class="odt-zoomable" data-zoom-src="images/100000000000030F000001509FAFD9EE.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在[8]中，该项目的当前引用；</span></li>
-<li><span style="color: #000000">在 [9] 中，已使用 NuGet 工具添加了 PostgreSQL ADO.NET 连接器。</span></li>
+<li><span style="color: #000000">在 [8] 中，项目当前的引用；</span></li>
+<li><span style="color: #000000">在 [9] 中，使用工具 NuGet 将 PostgreSQL 的连接器 ADO.NET 添加至该项目。</span></li>
 </ul>
-<p><span style="color: #000000">在 [App.config] 文件中，将 SQL Server 数据库信息替换为 PostgreSQL 数据库信息。这些信息可在 [RdvMedecins-PostgreSQL-01] 项目的 [App.config] 文件中找到：</span></p>
+<p><span style="color: #000000">在文件 [App.config] 中，将 SQL 服务器的数据库信息替换为 PostgreSQL 服务器的数据库信息。 这些信息可在项目 [RdvMedecins-PostgreSQL-01] 的文件 [App.config] 中找到：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- connection chain on base --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- 数据库连接字符串 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">monContexte</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">connectionString</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Server=127.0.0.1;Port=5432;Database=rdvmedecins-ef;User Id=postgres;Password=postgres;</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">providerName</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Npgsql</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- the factory provider --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- 工厂提供者 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.data</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">DbProviderFactories</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Npgsql Data Provider</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">invariant</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Npgsql</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">support</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">FF</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">description</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">.Net Framework Data Provider for Postgresql Server</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">Npgsql.NpgsqlFactory, Npgsql, Version=2.0.11.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
@@ -929,9 +931,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">system.data</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">Spring 管理的对象也会发生变化。目前我们有：</span></p>
+<p><span style="color: #000000">Spring管理的对象也会发生变化。目前我们有：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- spring configuration --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;!-- Spring配置 --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">context</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">resource</span><span style="color:#0000ff"> </span><span style="color:#ff0000">uri</span><span style="color:#0000ff">=</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">config://spring/objects</span><span style="color:#000000">&quot;</span><span style="color:#0000ff"> /&gt;</span></span></span>
@@ -942,8 +944,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">第 7 行引用了 [</span><span style="color: #0000ff">RdvMedecins-SqlServer-02</span><span style="color: #000000">] 项目的程序集。该程序集现已更名为 [</span><span style="color: #0000ff">RdvMedecins-PostgreSQL-02</span><span style="color: #000000">]。</span></p>
-<p><span style="color: #000000">完成上述操作后，我们即可运行 [DAO] 层测试。首先，必须确保数据库已填充数据（使用 [</span><span style="color: #0000ff">RdvMedecins-PostgreSQL-01</span><span style="color: #000000">] 项目中的 [Fill] 程序）。测试程序会因以下异常而崩溃：</span></p>
+<p><span style="color: #000000">第 7 行引用了项目 [RdvMedecins-SqlServer-02] 的程序集。该程序集现已更改为 [RdvMedecins-PostgreSQL-02]。</span></p>
+<p><span style="color: #000000">完成上述操作后，我们已准备好执行 [DAO] 层的测试。在此之前，需先确保已填充数据库（即 [RdvMedecins-PostgreSQL-01] 项目中的 [Fill] 程序）。测试程序因以下异常而崩溃：</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -970,20 +972,20 @@
 <a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="nx">Medecin</span><span class="w"> </span><span class="p">[</span><span class="mf">45</span><span class="p">,</span><span class="nx">Melle</span><span class="p">,</span><span class="nx">Justine</span><span class="p">,</span><span class="nx">Jacquemot</span><span class="p">,</span><span class="mf">511</span><span class="p">]</span>
 <a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="nx">L</span><span class="s1">&#39;erreur suivante s&#39;</span><span class="nx">est</span><span class="w"> </span><span class="nx">produite</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">RdvMedecinsException</span><span class="p">[</span><span class="mf">3</span><span class="p">,</span><span class="nx">GetCreneauxMedecin</span><span class="p">,</span><span class="nx">Une</span><span class="w"> </span><span class="nx">erreur</span><span class="w"> </span><span class="nx">s</span><span class="s1">&#39;est produite lors de l&#39;</span><span class="nx">exécution</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">la</span><span class="w"> </span><span class="nx">définition</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">la</span><span class="w"> </span><span class="nx">commande</span><span class="p">.</span><span class="w"> </span><span class="nx">Pour</span><span class="w"> </span><span class="nx">plus</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">détails</span><span class="p">,</span><span class="w"> </span><span class="nx">consultez</span><span class="w"> </span><span class="nx">l</span><span class="err">&#39;</span><span class="nx">exception</span><span class="w"> </span><span class="nx">interne</span><span class="p">.]</span>
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">第 13 行：该消息表明错误发生在 [DAO] 层的 [GetCreneauxMedecin] 方法中。该方法如下：</span></p>
+<p><span style="color: #000000">第13行，错误信息显示错误发生在[DAO]层中的[GetCreneauxMedecin]方法中。该方法如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">    // list of time slots for a given doctor</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // 特定医生的预约时段列表</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">List</span><span style="color:#000000">&lt;</span><span style="color:#2b91af">Creneau</span><span style="color:#000000">&gt; GetCreneauxMedecin(</span><span style="color:#0000ff">int</span><span style="color:#000000"> idMedecin)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// list of slots</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// 时段列表</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">try</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// opening persistence context</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 打开持久化上下文</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">using</span><span style="color:#000000"> (</span><span style="color:#0000ff">var</span><span style="color:#000000"> context = </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RdvMedecinsContext</span><span style="color:#000000">())</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// we get the doctor back with his slots</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// 获取医生及其可用时段</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#2b91af">Medecin</span><span style="color:#000000"> medecin = context.Medecins.Include(</span><span style="color:#a31515">&quot;Creneaux&quot;</span><span style="color:#000000">).Single(m =&gt; m.Id == idMedecin);</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// returns a list of the doctor&#x27;s slots</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// 返回该医生的时段列表</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">return</span><span style="color:#000000"> medecin.Creneaux.ToList&lt;</span><span style="color:#2b91af">Creneau</span><span style="color:#000000">&gt;();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
@@ -994,18 +996,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">第 11 行：我们识别出 </span><em>Include</em><span style="color: #000000"> 关键字，该关键字此前曾导致程序崩溃。之前的代码可替换为以下内容：</span></p>
+<p><span style="color: #000000">第 11 行，可以看到关键字 Include，它曾导致过之前的程序崩溃。上述代码可替换为以下内容：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">    // list of time slots for a given doctor</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // 指定医生的时段列表</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">public</span><span style="color:#000000"> </span><span style="color:#2b91af">List</span><span style="color:#000000">&lt;</span><span style="color:#2b91af">Creneau</span><span style="color:#000000">&gt; GetCreneauxMedecin(</span><span style="color:#0000ff">int</span><span style="color:#000000"> idMedecin)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// list of slots</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// 时段列表</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">try</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// opening persistence context</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// 打开持久化上下文</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">using</span><span style="color:#000000"> (</span><span style="color:#0000ff">var</span><span style="color:#000000"> context = </span><span style="color:#0000ff">new</span><span style="color:#000000"> </span><span style="color:#2b91af">RdvMedecinsContext</span><span style="color:#000000">())</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// returns a list of the doctor&#x27;s slots</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// 返回医生的时段列表</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#0000ff">return</span><span style="color:#000000"> context.Creneaux.Where(c =&gt; c.MedecinId == idMedecin).ToList&lt;</span><span style="color:#2b91af">Creneau</span><span style="color:#000000">&gt;(); </span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
@@ -1016,28 +1018,28 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">新代码看起来甚至比旧代码更一致。无论如何，这次测试程序通过了。</span></p>
-<p><span style="color: #000000">我们按照处理 [</span><span style="color: #0000ff">RdvMedecins-SqlServer-02</span><span style="color: #000000">] 项目的方法创建该项目的 DLL，并将所有项目 DLL 集中到 [</span><span style="color: #0000ff">RdvMedecins-PostgreSQL-02</span><span style="color: #000000">] 目录下新建的 [lib] 文件夹中。这些文件将作为后续 [</span><span style="color: #0000ff">RdvMedecins-PostgreSQL-03</span><span style="color: #000000">] Web 项目的引用。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E2000000E5594A8288.png" width="158" height="160" style="display:inline-block; margin:4px;width:4.189cm;height:4.246cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E2000000E5594A8288.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">新代码看起来甚至比旧代码更连贯。无论如何，这次测试程序通过了。</span></p>
+<p><span style="color: #000000">我们按照之前处理 [RdvMedecins-SqlServer-02] 项目的方式创建该项目的 DLL，并将该项目的所有 DLL 文件都收集到在 [RdvMedecins-PostgreSQL-02] 中创建的 [lib] 文件夹中。这些将作为后续 Web 项目 [RdvMedecins-PostgreSQL-03] 的参考。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E2000000E5594A8288.png" width="158" height="160" style="display:inline-block; margin:4px;width:4.189cm;height:4.24cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E2000000E5594A8288.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">现在，我们准备开始构建应用程序的 [ASP.NET] 层：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005EA0000011617109CB3.png" width="680" height="125" style="display:inline-block; margin:4px;width:17.999cm;height:3.306cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EA0000011617109CB3.png" /></td></tr></table>
+<p><span style="color: #000000">现在，我们已准备好构建应用程序的 [ASP.NET] 层：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005EA0000011617109CB3.png" width="680" height="125" style="display:inline-block; margin:4px;width:17.999cm;height:3.304cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EA0000011617109CB3.png" /></td></tr></table>
 
-<p><span style="color: #000000">我们将从 [RdvMedecins-SqlServer-03] 项目开始。我们将此项目的文件夹复制为 [RdvMedecins-PostgreSQL-03] [1]：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059C000002683692BC67.png" width="680" height="292" style="display:inline-block; margin:4px;width:17.999cm;height:7.721cm;" class="odt-zoomable" data-zoom-src="images/100000000000059C000002683692BC67.png" /></td></tr></table>
+<p><span style="color: #000000">我们将基于项目 [RdvMedecins-SqlServer-03] 进行操作。我们将该项目的文件夹复制到 [RdvMedecins-PostgreSQL-03] 和 [1] 中：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000059C000002683692BC67.png" width="680" height="292" style="display:inline-block; margin:4px;width:17.999cm;height:7.721cm;" class="odt-zoomable" data-zoom-src="images/100000000000059C000002683692BC67.png" /></td></tr></table>
 
 <ul>
 <li><span style="color: #000000">在 [2] 中，使用 VS 2012 Express for the Web，我们打开 [RdvMedecins-PostgreSQL-03] 文件夹中的解决方案；</span></li>
-<li><span style="color: #000000">在 [3] 中，我们将解决方案名称和项目名称均进行修改；</span></li>
+<li><span style="color: #000000">在 [3] 中，我们将解决方案名称和项目名称进行修改；</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005CE0000017D56435433.png" width="680" height="174" style="display:inline-block; margin:4px;width:17.999cm;height:4.614cm;" class="odt-zoomable" data-zoom-src="images/10000000000005CE0000017D56435433.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005CE0000017D56435433.png" width="680" height="174" style="display:inline-block; margin:4px;width:17.999cm;height:4.614cm;" class="odt-zoomable" data-zoom-src="images/10000000000005CE0000017D56435433.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">在 [4] 中，查看项目当前的引用；</span></li>
-<li><span style="color: #000000">在 [5] 中，我们将其删除；</span></li>
-<li><span style="color: #000000">在 [6] 中，用我们刚刚存储在 [RdvMedecins-PostgreSQL-02] 项目 [lib] 文件夹中的 DLL 的引用替换它们。</span></li>
+<li><span style="color: #000000">在 [4] 中，当前的项目引用；</span></li>
+<li><span style="color: #000000">在 [5] 中，将其删除；</span></li>
+<li><span style="color: #000000">并将其替换为对 DLL 的引用，该文件我们刚刚存储在项目 [RdvMedecins-PostgreSQL-02] 的文件夹 [lib] 中。</span></li>
 </ul>
-<p><span style="color: #000000">剩下的就是修改 [Web.config] 文件。我们将该文件的当前内容替换为 [RdvMedecins-PostgreSQL-02] 项目中 [App.config] 文件的内容。完成此操作后，运行 Web 项目。它运行正常。在运行 Web 应用程序之前，切记要先向数据库中插入数据。</span></p>
+<p><span style="color: #000000">接下来只需修改文件 [Web.config]，将其当前内容替换为项目 [RdvMedecins-PostgreSQL-02] 中文件 [App.config] 的内容。完成上述操作后，运行 Web 项目。项目运行正常。 请务必在运行Web应用程序前先填充数据库。</span></p>
 
 
 

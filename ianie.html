@@ -18,7 +18,7 @@
         <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="-ienianiu.html">
+        <link rel="next" href="-nianiu.html">
       
       
         
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -363,10 +365,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
+  <a href="#11-objectif" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1. 目标
+        1.1. Objectif
       
     </span>
   </a>
@@ -421,7 +423,7 @@
   <a href="#16-developpezcom" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.6. developpez.com上的相关文章
+        1.6. 关于 developpez.com 的相关文章
       
     </span>
   </a>
@@ -443,14 +445,14 @@
   
   
     <li class="md-nav__item">
-      <a href="-ienianiu.html" class="md-nav__link">
+      <a href="-nianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2.  ：一个案例研究
+    2.  案例研究
   
 
     
@@ -497,14 +499,14 @@
   
   
     <li class="md-nav__item">
-      <a href="mysql-5528-nianiu.html" class="md-nav__link">
+      <a href="iu-mysql-5528-enianiu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. MySQL 5.5.28 案例研究
+    4. 基于 MySQL 5.5.28 的案例研究
   
 
     
@@ -645,154 +647,154 @@
   
 
 
-<p><a id="refheading39705804107930"></a></p>
+<p><span id="refheading39705804107930" name="refheading39705804107930" class="odt-bookmark-anchor"></span></p>
 <h1 id="1">1. <span style="color: #365f91">简介</span></h1>
-<p><a id="refheading39707804107930"></a></p>
-<h2 id="11">1.1. <span style="color: #4f81bd">目标</span></h2>
-<p>该文档的PDF版本可在此处获取 |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBWbHfqngJxQpIAgB_K3DDQAYjcZef2QWVkofxY_fm2WXA?e=VogHLz">HERE</a>|。</p>
-<p>文档中的示例可在此处查看 |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=Qwvu3N">HERE</a>|。</p>
-<p>Entity Framework 是一种 ORM（对象关系映射器），最初由微软开发，现已开源 [2012 年 7 月，http://entityframework.codeplex.com/]。在 ASP.NET 课程中，我为某个 Web 应用程序采用以下架构：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D200000183315F4E40.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D200000183315F4E40.png" /></td></tr></table>
+<p><span id="refheading39707804107930" name="refheading39707804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="11-objectif">1.1. <span style="color: #4f81bd">Objectif</span></h2>
+<p>文档的PDF版本可在此处获取 |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBWbHfqngJxQpIAgB_K3DDQAYjcZef2QWVkofxY_fm2WXA?e=dDfY5N">HERE</a>|。</p>
+<p>文档中的示例可通过 |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=vF1M2a">HERE</a>| 获取。</p>
+<p>Entity Framework 是一种最初由微软创建、现已开源的 ORM（对象关系映射器）。在某门 ASP.NET 课程中，我为某个 Web 应用程序采用了以下架构：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007D200000183315F4E40.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D200000183315F4E40.png" /></td></tr></table>
 
-<p><strong>NHibernate</strong> 框架 [http://sourceforge.net/projects/nhibernate/] 是一种早于 Entity Framework 的 ORM。它是一款成熟的产品，支持连接各种数据库。 该 ORM 将 [DAO]（数据访问对象）层与 ADO.NET 连接器隔离。由 ORM 向连接器发出 SQL 命令。而 [DAO] 层则使用 ORM 提供的接口。该接口依赖于 ORM。因此，更换 ORM 需要修改 [DAO] 层。</p>
-<p>这种架构能够适应数据库管理系统（DBMS）的变化。</p>
-<p>当 [DAO] 层直接连接到 ADO.NET 连接器时，更改 DBMS 会影响 [DAO] 层：</p>
+<p><strong>NHibernate</strong> [http://sourceforge.net/projects/nhibernate/] 框架是早于 Entity Framework 出现的 ORM。这是一个成熟的产品，支持连接各种数据库。 ORM 将 [DAO] 层（数据访问对象）与 ADO.NET 连接器进行隔离。 ORM 负责向连接器发出 SQL 指令。[DAO] 层则使用 ORM 提供的接口。 而该接口又依赖于ORM。因此，更换ORM意味着需要更换[DAO]层。</p>
+<p>这种架构能够很好地应对 SGBD 的变更。</p>
+<p>当将 [DAO] 层直接连接到 ADO.NET 连接器时，更改 SGBD 会影响 [DAO] 层：</p>
 <ul>
-<li>并非所有数据库管理系统都具有相同的数据类型；</li>
-<li>不同数据库管理系统生成主键的策略各不相同；</li>
-<li>DBMS 采用专有 SQL 语法；</li>
-<li>[DAO]层可能使用了与特定DBMS绑定的库；</li>
+<li>SGBD 层的数据类型并不完全相同；</li>
+<li>SGBD 没有相同的primary key生成策略；</li>
+<li>SGBD 包含专有 SQL；</li>
+<li>[DAO] 层可能使用了与特定 SGBD 相关的库；</li>
 <li>……</li>
 </ul>
-<p>当 ORM 连接到 ADO.NET 连接器时，更换 DBMS 只需配置 ORM 以适应新的 DBMS。[DAO] 层保持不变。</p>
-<p><strong>Spring.NET</strong> 框架 [http://www.springframework.net/index.html] 确保了应用程序各层的集成。上文： </p>
+<p>当 ORM 连接到 ADO.NET 连接器时， 更换 SGBD 相当于修改 ORM 的配置，使其适应新的 SGBD。[DAO] 层保持不变。</p>
+<p><strong>Spring.NET</strong> [http://www.springframework.net/index.html] 框架负责应用程序各层的集成。如上所述： </p>
 <ul>
-<li>ASP.NET 应用程序向 Spring 请求 [DAO] 层的引用；</li>
-<li>Spring 通过配置文件创建该层并返回引用。</li>
+<li>应用程序 ASP.NET 向 Spring 请求 [DAO] 层的引用；</li>
+<li>Spring利用配置文件创建该层并返回其引用。</li>
 </ul>
-<p>只要各层继续暴露相同的接口，这种架构就能很好地处理层级变更。要更改上文中的 [DAO] 层，只需修改 Spring 的配置文件，使新层实例化并替换旧层即可。由于两层都实现了相同的接口，且 ASP.NET 层使用该接口，因此 ASP.NET 层保持不变。</p>
-<p>因此，我们在此构建了一个灵活且可扩展的架构。为了演示这一点，我们将用 Entity Framework 5 替换 NHibernate ORM：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D7000001825B1CF7DD.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.463cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D7000001825B1CF7DD.png" /></td></tr></table>
+<p>只要各层保持相同的接口，这种架构就能很好地适应层级的变更。修改上文中的 [DAO] 层，只需修改 Spring 的配置文件，使新层替代旧层被实例化。 由于这些层实现了相同的接口，且 ASP.NET 层使用该接口，因此 ASP.NET 层保持不变。</p>
+<p>因此，我们拥有了一个灵活且可扩展的架构。为了演示这一点，我们将用 Entity Framework 5 替换 ORM NHibernate：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007D7000001825B1CF7DD.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D7000001825B1CF7DD.png" /></td></tr></table>
 
 <p>我们将分几个步骤进行：</p>
 <ul>
-<li>我们将针对多种数据库管理系统（DBMS）探索 Entity Framework 5；</li>
+<li>首先通过多个 SGBD 文件了解 Entity Framework 5；</li>
 <li>构建 [DAO2] 层；</li>
-<li>我们将把现有的 ASP.NET 应用程序与这个新的 [DAO] 层进行集成。</li>
+<li>将现有的 ASP.NET 应用程序与这个新的 [DAO] 层连接起来。</li>
 </ul>
-<p><a id="refheading39709804107930"></a>
-<a id="outils"></a></p>
+<p><span id="refheading39709804107930" name="refheading39709804107930" class="odt-bookmark-anchor"></span>
+<span id="outils" name="outils" class="odt-bookmark-anchor"></span></p>
 <h2 id="12">1.2. <span style="color: #4f81bd">使用的工具</span></h2>
-<p>测试在运行 Windows 7 Pro 系统的 HP EliteBook 笔记本电脑上进行，该电脑搭载英特尔酷睿 i7 处理器和 8 GB 内存。我们将使用 C# 作为开发语言。</p>
-<p>本文档使用以下工具，所有工具均可免费获取：</p>
-<p><strong>开发IDE</strong>：</p>
+<p>测试在搭载 Windows 7 专业版、配备 Intel Core i7 处理器和 8 GB 内存的 HP EliteBook 笔记本电脑上进行。我们将使用 C# 作为开发语言。</p>
+<p>本文档使用以下工具，均可免费获取：</p>
+<p><strong>开发工具</strong>：</p>
 <ul>
 <li>Visual Studio Express for Desktop 2012 [http://www.microsoft.com/visualstudio/fra/downloads]；</li>
 <li>Visual Studio Express for Web 2012 [http://www.microsoft.com/visualstudio/fra/downloads]。</li>
 </ul>
-<p><strong>SQL Server Express 2012 数据库管理系统</strong>：</p>
+<p><strong>SGBD SQL Server Express 2012</strong>：</p>
 <ul>
-<li>数据库管理系统：[http://www.microsoft.com/fr-fr/download/details.aspx?id=29062]；</li>
-<li>管理工具：EMS SQL Manager for SQL Server 免费版 [http://www.sqlmanager.net/fr/products/mssql/manager/download]。</li>
+<li>SGBD：[http://www.microsoft.com/fr-fr/download/details.aspx?id=29062]；</li>
+<li>一个管理工具：EMS SQL Manager for SQL Server Freeware [http://www.sqlmanager.net/fr/products/mssql/manager/download]。</li>
 </ul>
-<p><strong>Oracle Database Express Edition 11g Release 2 数据库管理系统</strong>：</p>
+<p><strong>SGBD Oracle Database Express Edition 11g Release 2</strong>：</p>
 <ul>
-<li>数据库管理系统：[http://www.oracle.com/technetwork/products/express-edition/downloads/index.html]；</li>
-<li>管理工具：EMS SQL Manager for Oracle 免费版 [http://www.sqlmanager.net/fr/products/oracle/manager/download]；</li>
-<li>适用于 .NET 的 Oracle 客户端：ODAC 11.2 Release 5 (11.2.0.3.20) 及 Oracle Developer Tools for Visual Studio：[http://www.oracle.com/technetwork/developer-tools/visual-studio/downloads/index.html]。</li>
+<li>SGBD：[http://www.oracle.com/technetwork/products/express-edition/downloads/index.html]；</li>
+<li>管理工具：EMS SQL Manager for Oracle Freeware [http://www.sqlmanager.net/fr/products/oracle/manager/download]；</li>
+<li>一个 Oracle 客户端：NET：ODAC 11.2 Release 5 (11.2.0.3.20) 带 Oracle Developer Tools for Visual Studio：[http://www.oracle.com/technetwork/developer-tools/visual-studio/downloads/index.html]。</li>
 </ul>
-<p><strong>MySQL 5.5.28 数据库管理系统</strong>：</p>
+<p><strong>SGBD MySQL 5.5.28</strong>：</p>
 <ul>
-<li>数据库管理系统：[http://dev.mysql.com/downloads/]；</li>
-<li>管理工具：EMS SQL Manager for MySQL 免费版 [http://www.sqlmanager.net/fr/products/mysql/manager/download]。</li>
+<li>SGBD：[http://dev.mysql.com/downloads/]；</li>
+<li>管理工具：EMS、SQL、Manager for MySQL、Freeware [http://www.sqlmanager.net/fr/products/mysql/manager/download]。</li>
 </ul>
-<p><strong>PostgreSQL 9.2.1 数据库管理系统</strong>：</p>
+<p><strong>SGBD PostgreSQL 9.2.1</strong>：</p>
 <ul>
-<li>数据库管理系统：[http://www.enterprisedb.com/products-services-training/pgdownload#windows]；</li>
-<li>管理工具：EMS SQL Manager for PostgreSQL 免费版 [http://www.sqlmanager.net/fr/products/postgresql/manager/download]。</li>
+<li>SGBD：[http://www.enterprisedb.com/products-services-training/pgdownload#windows]；</li>
+<li>管理工具：EMS SQL Manager for PostgreSQL 免费软件 [http://www.sqlmanager.net/fr/products/postgresql/manager/download]。</li>
 </ul>
-<p><strong>Firebird 2.1 数据库管理系统</strong>：</p>
+<p><strong>SGBD Firebird 2.1</strong>：</p>
 <ul>
-<li>数据库管理系统：[http://www.firebirdsql.org/en/firebird-2-1-5/]；</li>
-<li>管理工具：EMS SQL Manager for InterBase/Firebird 免费版 [http://www.sqlmanager.net/fr/products/ibfb/manager/download]。</li>
+<li>SGBD：[http://www.firebirdsql.org/en/firebird-2-1-5/]；</li>
+<li>一个管理工具：EMS SQL Manager for InterBase/Firebird 免费软件 [http://www.sqlmanager.net/fr/products/ibfb/manager/download]。</li>
 </ul>
-<p><strong>LINQPad 4</strong>：一款用于学习 LINQ（语言集成查询）的工具 [http://www.linqpad.net/, http://www.linqpad.net/GetFile.aspx?LINQPad4.zip]。</p>
-<p><a id="refheading39711804107930"></a></p>
+<p><strong>LINQPad 4</strong>：LINQ（语言 INtegrated 查询）的学习工具 [http://www.linqpad.net/, http://www.linqpad.net/GetFile.aspx?LINQPad4.zip]。</p>
+<p><span id="refheading39711804107930" name="refheading39711804107930" class="odt-bookmark-anchor"></span></p>
 <h2 id="13">1.3. <span style="color: #4f81bd">源代码</span></h2>
-<p>以下示例的源代码可在此处获取 |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA344nuzMpNRIgz2_KIs-hJAahtX594ypVZCAsY8Fxt4R8?e=Qwvu3N">HERE</a>|。</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006740000038FC08B9EA9.png" width="578" height="319" style="display:inline-block; margin:4px;width:15.3cm;height:8.437cm;" class="odt-zoomable" data-zoom-src="images/10000000000006740000038FC08B9EA9.png" /></td></tr></table>
+<p>以下示例的源代码可在 URL [<a href="https://stahe.github.io/zh-ef5cf-oct-2012/"><u><span style="color: #0563c1">通过实例学习 Entity Framework 5 Code First（2012）</span></u></a>] 中获取。</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006740000038FC08B9EA9.png" width="578" height="319" style="display:inline-block; margin:4px;width:15.3cm;height:8.44cm;" class="odt-zoomable" data-zoom-src="images/10000000000006740000038FC08B9EA9.png" /></td></tr></table>
 
-<p>这些是 Visual Studio 2012 项目 [1]，已归入一个解决方案 [2] 中。在 [databases] 文件夹内，针对每种使用的数据库管理系统（DBMS）都设有一个文件夹。这些文件夹中包含用于生成相应 DBMS 示例数据库的 SQL 脚本。</p>
-<p><a id="refheading39713804107930"></a></p>
+<p>这些是 Visual Studio 2012 项目 [1]，汇集在一个解决方案 [2] 中。 在文件夹 [databases] 中，会发现一个按 SGBD 使用的文件夹。其中包含用于生成这些 SGBD 示例数据库的脚本 SQL。</p>
+<p><span id="refheading39713804107930" name="refheading39713804107930" class="odt-bookmark-anchor"></span></p>
 <h2 id="14">1.4. <span style="color: #4f81bd">方法</span></h2>
-<p>为了学习 <strong>Entity Framework 5 Code</strong> First，我首先参考了以下书籍：由 Jon Galloway、Phil Haack、Brad Wilson 和 Scott Allen 合著、Wrox 出版的《<strong>Professional ASP.NET MVC 3</strong>》。在书中的示例应用程序中，作者使用了  <strong>Entity Framework</strong> (<strong>EF</strong>) 作为 ORM。由于我对它不熟悉，我便上网搜索以了解更多信息。 我发现最新版本是 EF 5，且与 EF 4 存在兼容性问题——当用 EF 5 测试书中的代码时，会产生编译错误。</p>
-<p>随后我发现，使用 EF 有多种方式：</p>
+<p>为了了解 <strong>Entity Framework 5 Code First</strong>，我首先参考了以下书籍：Jon Galloway、Phil Haack、Brad Wilson 和 Scott Allen 合著、Wrox 出版社出版的《<strong>Professional ASP.NET MVC 3</strong>》。 在该书的示例应用中，作者将 <strong>Entity Framework</strong> (<strong>EF</strong>) 作为 ORM 使用。由于我对此不熟悉，便上网查阅了更多资料。 我发现最新版本是 EF 5，且与 EF 4 存在兼容性问题，因为用 EF 5 测试书中的代码时出现了编译错误。</p>
+<p>随后我发现，使用EF有多种方式：</p>
 <ul>
-<li><strong>模型优先（Model First</strong>）：关于这种 EF 实现方式的文章有很多，例如 [http://msdn.microsoft.com/en-us/data/ff830362.aspx]。该文章开篇如下：</li>
+<li><strong>模型优先（Model First</strong>）：关于这种 EF 方法的文章有很多，例如 [http://msdn.microsoft.com/en-us/data/ff830362.aspx]。该文章的引言如下：</li>
 </ul>
-<p><strong>摘要</strong>：本文将探讨随 .NET Framework 4 和 Visual Studio 2010 一起发布的全新 Entity Framework 4。 我将基于“模型优先”的视角探讨其使用方法，其前提是：您可以从模型出发驱动数据库设计，并基于该模型以声明式方式构建数据库和数据访问层。该模型包含以实体和关系形式呈现的数据描述，为使用 ADO.NET 提供了强有力的方法，并通过模型定义与其实现之间的抽象实现了关注点的分离。</p>
-<p>ORM 架起了数据库表与类之间的桥梁。</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007DB000001801B234BCE.png" width="680" height="130" style="display:inline-block; margin:4px;width:17.999cm;height:3.438cm;" class="odt-zoomable" data-zoom-src="images/10000000000007DB000001801B234BCE.png" /></td></tr></table>
+<p><strong>摘要</strong>：本文将探讨随 .NET Framework 4 和 Visual Studio 2010 一起发布的新版 Entity Framework 4。我将从“模型优先”的角度探讨其使用方法，其前提是您可以基于模型驱动数据库设计，并以此模型为依据以声明式方式构建数据库和数据访问层。 该模型包含以实体和关系形式呈现的数据描述，为处理 ADO.NET 提供了强有力的方法，并通过模型定义与其实现之间的抽象实现了关注点的分离。</p>
+<p>ORM 在数据库表与类之间架起了桥梁。</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007DB000001801B234BCE.png" width="680" height="130" style="display:inline-block; margin:4px;width:17.999cm;height:3.436cm;" class="odt-zoomable" data-zoom-src="images/10000000000007DB000001801B234BCE.png" /></td></tr></table>
 
 <p>在上图中，</p>
 <ul>
-<li>在 EF5 层的左侧，是对象，我们称之为实体；</li>
+<li>在 EF5 层的左侧，是称为实体的对象；</li>
 <li>在 EF5 层的右侧，则是数据库表。</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007E6000001174D032921.png" width="680" height="94" style="display:inline-block; margin:4px;width:17.999cm;height:2.484cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E6000001174D032921.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007E6000001174D032921.png" width="680" height="94" style="display:inline-block; margin:4px;width:17.999cm;height:2.484cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E6000001174D032921.png" /></td></tr></table>
 
-<p>[DAO] 层处理代表数据库表的对象。这些对象被归入一个持久化上下文中，并被称为实体（Entity）。 对实体的更改（插入、修改、删除）将通过 ORM 反映到数据库表中。此外，[DAO] 层使用一种名为 LINQ to Entities（语言集成查询）的查询语言（ ），该语言查询的是实体而非表。<strong>模型优先（</strong>Model-First）方法涉及使用图形化工具构建实体。您定义每个实体及其与其他实体的关联关系。完成这一步后，工具将生成：</p>
+<p>[DAO]层处理数据库表中的图像对象。这些对象被整合到一个持久化上下文中，并被称为实体（Entity）。 通过对ORM的调用，对实体所做的修改（插入、修改、删除）将同步反映到数据库表中。 此外，[DAO] 层还具备一种名为 LINQ to Entity（INtegrated 查询语言）的查询语言，该语言针对实体而非表进行查询。<strong>Model First</strong> 方法是指使用图形化工具构建实体。 首先定义每个实体及其与其他实体的关联关系。完成这一步后，工具将生成：</p>
 <ul>
-<li>反映图形化构建实体的各类类；</li>
+<li>反映图形化构建的实体的各类类；</li>
 <li>用于生成数据库的 DDL（数据定义语言）。</li>
 </ul>
-<p>我找到的关于此方法的所有示例都使用了 Visual Studio 2010 Professional 以及一个名为 <strong>ADO.NET 实体数据模型的</strong>模型。我虽然能在 Visual Studio 2010 Professional 中测试该模型，但当我切换到目标环境 Visual Studio Express 2012 时，发现该模型已不可用。因此，我放弃了这种方法。</p>
+<p>我找到的关于该方法的示例均使用了 Visual Studio 2010 Professional 以及一个名为 <strong>ADO.NET Entity Data Model</strong> 的模型。我曾使用 Visual Studio 2010 Professional 测试过该模型，但当我切换到目标环境 Visual Studio Express 2012 时，发现该模型已不可用。 因此我放弃了这种方法。</p>
 <ul>
-<li><strong>数据库优先</strong>：该方法的起点是现有的数据库。在此基础上，工具会自动为数据库表生成实体模型。 同样，我找到的示例（如 [http://msdn.microsoft.com/en-us/data/gg685489.aspx]）也使用 Visual Studio 2010 Professional 和 ADO.NET 实体数据模型。因此，尽管这是我最喜欢的方法，我还是放弃了它。要确定使用哪些实体来表示现有数据库，使用生成工具来开始是很容易的。</li>
-<li><strong>代码优先</strong>（<strong>Code First</strong>）：由您亲自编写构成实体的类。这至少需要对 EF 的工作原理有基本的了解。我选择了这种方法，因为它与 Visual Studio Express 2012 兼容。</li>
+<li><strong>数据库优先（Database First</strong>）：该方法以现有数据库为起点。基于此，工具会自动生成数据库表的实体映射。然而，我找到的示例（例如 [http://msdn.microsoft.com/en-us/data/gg685489.aspx]）同样使用 Visual Studio 2010 Professional 以及名为 ADO.NET 的实体数据模型。 因此，我最终也放弃了这种原本最偏爱的方案。若要确定现有数据库中应采用哪些实体作为映射对象，使用生成工具来处理本应是再简单不过的事。</li>
+<li><strong>代码优先（Code First</strong>）：由开发者自行编写构成实体的类。这需要对 EF 的工作原理有基本的了解。我选择了这条路，因为它可以在 Visual Studio Express 2012 上使用。</li>
 </ul>
-<p>基于此，我按照以下步骤进行操作：</p>
+<p>掌握这些后，我按照以下方式进行工作：</p>
 <ul>
-<li>我首先为 SQL Server Express 2012 编写了代码，因为这是示例最多的数据库管理系统；</li>
-<li>在调试完该代码后，我将其移植到了其他数据库管理系统（Firebird、Oracle、MySQL、PostgreSQL）。</li>
+<li>首先为 SQL Server Express 2012 编写代码，因为针对该版本的示例最为丰富；</li>
+<li>在调试完该代码后，将其移植到其他 SGBD 版本（Firebird、Oracle、MySQL、PostgreSQL）。</li>
 </ul>
-<p>在此，我们将采取不同的做法。我将首先详细说明所有针对 SQL Server 的代码，然后说明如何将其移植到其他数据库管理系统。在移植过程中，进行了以下调整：</p>
+<p>此处我们将采取不同的处理方式。我将首先描述 SQL Server 的全部代码，然后说明如何将其移植到其他 SGBD 版本中。在此次移植过程中，进行了以下调整：</p>
 <ul>
-<li>各数据库具有专有特性。特别是，我使用了触发器来自动生成某些列的内容。每个数据库管理系统对此都有自己的处理方式；</li>
-<li>表中的图像实体可能会发生变化，但这是有意为之。我本可以选择适用于所有数据库的实体；</li>
-<li>针对各数据库管理系统（DBMS）的 ADO.NET 驱动程序有所不同；</li>
-<li>连接数据库管理系统（DBMS）的连接字符串发生了变化。</li>
+<li>数据库具有专有特性。我特别使用了触发器（Triggers）来自动生成某些列的内容。每个 SGBD 都有其独特的管理方式；</li>
+<li>表中的图像实体可能会发生变化，但这属于有意为之。我本可以选择适用于所有数据库的通用实体；</li>
+<li>SGBD的驱动程序ADO.NET发生了变更；</li>
+<li>连接到 SGBD 的字符串发生了变化。</li>
 </ul>
-<p>采用的方法如下：</p>
+<p>采用的流程如下：</p>
 <ul>
-<li>实体与数据库的映射。向数据库中插入数据；</li>
+<li>实体与数据库的关联。填充数据库；</li>
 <li>使用 LINQ 查询导出数据库；</li>
-<li>LINQPad，一款用于学习LINQ的工具；</li>
-<li>添加、删除和修改实体；</li>
-<li>管理并发访问；</li>
-<li>在事务内保存持久化上下文；</li>
+<li>LINQPad，作为LINQ的学习工具；</li>
+<li>实体的添加、删除和修改；</li>
+<li>访问并发管理；</li>
+<li>将持久化上下文保存到事务中；</li>
 <li>在持久化上下文之外修改实体；</li>
-<li>立即加载与延迟加载；</li>
+<li>即时加载与延迟加载；</li>
 <li>构建 [DAO] 层；</li>
-<li>构建 ASP.NET Web 层。
-<a id="refheading39715804107930"></a></li>
+<li>构建Web层ASP.NET。</li>
 </ul>
-<h2 id="15">1.5. <span style="color: #4f81bd"><span style="color: #4f81bd">目标受众</span></span></h2>
-<p>本文档面向<strong>初学者</strong>。</p>
-<p>本文并非关于 <strong>Entity Framework 5 Code First</strong> 的教程。若需系统学习，建议阅读 Julie Lerman 和 Rowan Miller 合著、O&#x27;Reilly 出版的《<strong>Programming Entity Framework: Code First</strong>》等书籍。本文不求面面俱到，仅概述了我理解该 ORM 的方法。我相信这种方法对其他使用 EF5 的开发者可能有所帮助。我的目标仅限于此。</p>
-<p><a id="refheading39717804107930"></a></p>
-<h2 id="16-developpezcom">1.6. <span style="color: #4f81bd">developpez.com上的相关文章</span></h2>
-<p>上述书籍将作为参考资料。<em>developpez.com</em> 网站上还有专门介绍 Entity Framework 的文章。以下是其中几篇：</p>
+<p><span id="refheading39715804107930" name="refheading39715804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="15">1.5. <span style="color: #4f81bd">目标受众</span></h2>
+<p>本指南面向<strong>初学者</strong>。</p>
+<p>本文并非关于 <strong>Entity Framework 5 Code First</strong> 的教程。若需系统学习，可参考 Julie Lerman 和 Rowan Miller 所著、O&#x27;Reilly 出版社出版的《<strong>Programming Entity Framework: Code First</strong>》。本文绝非旨在面面俱到，仅阐述了我个人理解 ORM 所采用的方法。 我认为该方法对其他接触EF5的人士可能有所帮助。我的目标仅限于此。</p>
+<p><span id="refheading39717804107930" name="refheading39717804107930" class="odt-bookmark-anchor"></span></p>
+<h2 id="16-developpezcom">1.6. <span style="color: #4f81bd">关于 developpez.com 的相关文章</span></h2>
+<p>上述书籍将作为参考资料。<em>此外，developpez.com上</em>还有一些专门讨论 Entity Framework 的文章。以下列举其中几篇：</p>
 <ul>
-<li>《<a href="http://reward.developpez.com/tutoriels/dotnet/entity-framework/approche-code-first/"><u><span style="color: #0563c1">Entity Framework——代码优先方法</span></u></a>》，2012年6月——作者：<a href="http://www.developpez.net/forums/u44091/reward/"><u><span style="color: #0563c1">Reward</span></u></a>。本文与本文件部分内容重合。不过，该文在某些方面进行了更深入的探讨，特别是关于类继承与表之间“映射”的讨论；</li>
-<li><a href="http://pmusso.developpez.com/tutoriels/dotnet/entity-framework/introduction/"><u><span style="color: #0563c1">“Entity Framework 入门</span></u></a>”，2008年12月，作者：<a href="http://pmusso.developpez.com/"><u><span style="color: #0563c1">Paul Musso</span></u></a>；</li>
-<li><a href="http://dotnet.developpez.com/mvc/mvc-entity-framework/"><u><span style="color: #0563c1">“使用 Entity Framework 创建类模型</span></u></a>”，2009 年 4 月，作者：<a href="http://dotnet.developpez.com/mvc/mvc-entity-framework/"><u><span style="color: #0563c1">Jérôme Lambert</span></u></a>；</li>
-<li><a href="http://immobilis.developpez.com/tutoriels/dotnet/test-performance-acces-donnees-linq-vs-sql-vs-entity-framework/"><u><span style="color: #0563c1">“Linq to SQL 与 SQL 及 Entity Framework 的性能对比</span></u></a>”，2011年6月，作者：<a href="http://www.developpez.net/forums/u33118/immobilis/"><u><span style="color: #0563c1">Immobilis</span></u></a>；</li>
-<li>《<a href="http://blog.developpez.com/lilroma/p11097/net/entity_framework_code_first_activer_la_m"><u><span style="color: #0563c1">Entity Framework Code First：启用自动迁移</span></u></a>》，2012年6月，作者：<a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>；</li>
-<li>《<a href="http://rdonfack.developpez.com/tutoriels/dotnet/webmatrix-application-crud-entity-framework/"><u><span style="color: #0563c1">使用 WebMatrix、Razor 和 Entity Framework 创建 CRUD 应用程序</span></u></a>》，2012 年 5 月，作者：<a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>；</li>
-<li>《<a href="http://rdonfack.developpez.com/tutoriels/dotnet/entity-framework-decouverte-code-first-migrations/codefirstmigrations.pdf"><u><span style="color: #0563c1">Entity Framework：探索代码优先迁移</span></u></a>》，2012年6月，作者：<a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>；</li>
+<li>“<a href="http://reward.developpez.com/tutoriels/dotnet/entity-framework/approche-code-first/"><u><span style="color: #0563c1">Entity Framework——Code First 方法</span></u></a>”，2012年6月——作者：<a href="http://www.developpez.net/forums/u44091/reward/"><u><span style="color: #0563c1">Reward</span></u></a>。该文章与本文部分内容重合。但在某些方面，特别是关于类继承与表之间的“映射”方面，其探讨更为深入；</li>
+<li>“<a href="http://pmusso.developpez.com/tutoriels/dotnet/entity-framework/introduction/"><u><span style="color: #0563c1">Entity Framework 入门</span></u></a>”，2008年12月，作者：<a href="http://pmusso.developpez.com/"><u><span style="color: #0563c1">Paul Musso</span></u></a>；</li>
+<li>“<a href="http://dotnet.developpez.com/mvc/mvc-entity-framework/"><u><span style="color: #0563c1">使用 Entity Framework 创建类模型</span></u></a>”，2009年4月，作者：<a href="http://dotnet.developpez.com/mvc/mvc-entity-framework/"><u><span style="color: #0563c1">Jérôme Lambert</span></u></a>；</li>
+<li><a href="http://immobilis.developpez.com/tutoriels/dotnet/test-performance-acces-donnees-linq-vs-sql-vs-entity-framework/"><u><span style="color: #0563c1">“Linq to SQL 与 Sql 及 Entity Framework 的性能对比</span></u></a>”，2011年6月，<a href="http://www.developpez.net/forums/u33118/immobilis/"><u><span style="color: #0563c1">作者</span></u></a>：<a href="http://www.developpez.net/forums/u33118/immobilis/"><u><span style="color: #0563c1">Immobilis</span></u></a>；</li>
+<li>&quot;<a href="http://blog.developpez.com/lilroma/p11097/net/entity_framework_code_first_activer_la_m"><u><span style="color: #0563c1">Entity Framework Code First：启用自动迁移</span></u></a>&quot;，2012年6月，作者：<a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>；</li>
+<li><a href="http://rdonfack.developpez.com/tutoriels/dotnet/webmatrix-application-crud-entity-framework/"><u><span style="color: #0563c1">“使用 CRUD、Razor 和 Entity Framework 创建应用程序</span></u></a>”，2012 年 5 月，作者：<a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>；</li>
+<li><a href="http://rdonfack.developpez.com/tutoriels/dotnet/entity-framework-decouverte-code-first-migrations/codefirstmigrations.pdf"><u><span style="color: #0563c1">“Entity Framework：探索 Code First 迁移</span></u></a>”，2012年6月，作者：<a href="http://blog.developpez.com/lilroma/pauthor/HinaultRomaric"><u><span style="color: #0563c1">Hinault Romaric</span></u></a>；</li>
 </ul>
-<p>如上所述，本文档并非详尽无遗。读者若能参考上述文章以填补某些空白，将大有裨益。我的研究可能尚有不周之处，若遗漏了任何作者，在此致以歉意。</p>
+<p>如上所述，本文档并非详尽无遗。建议阅读上述文章以弥补某些不足。我的研究可能尚不完整。若遗漏了某些作者，敬请谅解。</p>
 
 
 
